@@ -1,0 +1,20 @@
+# Ignore compiled assets and deployment junk in public_html
+/public_html/build
+/public_html/hot
+/public_html/mix-manifest.json
+/public_html/storage
+/public_html/.htaccess.bak
+/public_html/index.php.bak
+
+# System / editor junk
+.DS_Store
+Thumbs.db
+*.log
+*.zip
+*.tar.gz
+*.swp
+*.swo
+*.bak
+*.tmp
+.idea/
+.vscode/

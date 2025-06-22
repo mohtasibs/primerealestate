@@ -13,7 +13,7 @@
 <div class="clearfix"></div>
 
 <!-- Hero Section -->
-<section class="bg-cover position-relative ht-500 py-0" style="background: url({{ asset('assets/img/list-2.jpg') }}) no-repeat center center/cover;" data-overlay="5">
+<section class="bg-cover position-relative ht-500 py-0" style="background: url({{ asset('assets/img/list-2.JPG') }}) no-repeat center center/cover;" data-overlay="5">
     <div class="container h-100 d-flex align-items-center justify-content-center">
         <div class="text-center px-3" style="position: relative; z-index: 2;">
             <h1 class="fw-bold display-4 mb-3 text-white text-shadow-lg">2 Bedroom 1 Bath Duplex for Lease</h1>

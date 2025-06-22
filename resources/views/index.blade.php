@@ -69,6 +69,8 @@
 		</div>
 		<!-- End Search Form Row -->
 
+
+
 		<div class="row align-items-center justify-content-center">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-12 mb-2">
 				<div class="text-center"><h6 class="fw-semibold">Explore Popular Categories</h6></div>
@@ -88,6 +90,7 @@
 	<div class="mousedrop z-1"><a href="#mains" class="mousewheel"><i class="bi bi-mouse"></i></a></div>
 </div>
 <!-- Hero End -->
+
 
 <!-- Brand Start -->
 <section class="py-4 pb-0">

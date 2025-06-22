@@ -87,6 +87,13 @@
 </section>
 <!-- Popular Listings End -->
 
+<!-- Buying Buddy Quick Search Widget for Testing -->
+<div id="MBBv3_QuickSearch" filter="formType:simple2"></div>
+
+<!-- Buying Buddy Script (if not already included in layout) -->
+<script async src="https://cdn.buyingbuddy.com/widgets/bb.js?key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
+
+
 <!-- Passionate Section Start -->
 <div class="passionate-section pb-5 bg-light text-center">
     <div class="container">

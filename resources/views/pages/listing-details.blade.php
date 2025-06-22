@@ -10,7 +10,7 @@
     <h2 class="fw-bold text-center mb-4">Property Details</h2>
 
     <!-- Buying Buddy Property Details Widget -->
-    <div id="bb-widget-listing-details" class="bb-widget"></div>
+    <div id="MBBv3_SearchDetails"></div>
 </div>
 
 @include('includes.footer')

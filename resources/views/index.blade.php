@@ -1,4 +1,5 @@
 <!-- resources/views/index.blade.php -->
+<!-- -->
 @extends('layouts.main')
 
 @section('title', 'Index Page')
@@ -6,7 +7,7 @@
 @section('content')
 
 @include('includes.navbar')
-			
+
 <div class="clearfix"></div>
 
 <!-- Hero Start -->
@@ -23,7 +24,7 @@
 			</div>
 		</div>
 		<!-- </row> -->
-		
+
 		<!-- Search Form row -->
 		<div class="row align-items-start justify-content-center mb-lg-5 mb-4">
 			<div class="col-xl-11 col-lg-12 col-md-12 col-sm-12">
@@ -44,7 +45,7 @@
 							<div class="form-group fw-medium lights-bg no-border">
 								<div class="selects">
 									<select class="categories form-control">
-									<option label="option"></option> 
+									<option label="option"></option>
 									<option value="lv">Eat & Drinking</option>
 									<option value="la">Rental Property</option>
 									<option value="kc">Classifieds</option>
@@ -67,18 +68,18 @@
 			</div>
 		</div>
 		<!-- End Search Form Row -->
-		
+
 		<div class="row align-items-center justify-content-center">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-12 mb-2">
 				<div class="text-center"><h6 class="fw-semibold">Explore Popular Categories</h6></div>
 			</div>
 			<div class="col-xl-12 col-lg-12 col-md-12 col-md-12 col-12">
 				<div class="popularSearches d-flex align-items-center justify-content-center column-gap-3 row-gap-1 flex-wrap">
-					<div class="singleItem"><a href="#" class="badge badge-transparent rounded-pill">Real Estate</a></div>	
-					<div class="singleItem"><a href="#" class="badge badge-transparent rounded-pill">Eat & Drink</a></div>	
-					<div class="singleItem"><a href="#" class="badge badge-transparent rounded-pill">Shopping</a></div>	
-					<div class="singleItem"><a href="#" class="badge badge-transparent rounded-pill">Nightlife</a></div>	
-					<div class="singleItem"><a href="#" class="badge badge-transparent rounded-pill">Services</a></div>	
+					<div class="singleItem"><a href="#" class="badge badge-transparent rounded-pill">Real Estate</a></div>
+					<div class="singleItem"><a href="#" class="badge badge-transparent rounded-pill">Eat & Drink</a></div>
+					<div class="singleItem"><a href="#" class="badge badge-transparent rounded-pill">Shopping</a></div>
+					<div class="singleItem"><a href="#" class="badge badge-transparent rounded-pill">Nightlife</a></div>
+					<div class="singleItem"><a href="#" class="badge badge-transparent rounded-pill">Services</a></div>
 				</div>
 			</div>
 		</div>
@@ -94,10 +95,10 @@
 		<div class="row align-items-center justify-content-center">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-12">
 				<div class="owl-carousel brand-slider">
-					
+
 					<!-- includes/Home/index/brand.blade.php -->
 					@include('includes.Home.index.brand')
-					
+
 				</div>
 			</div>
 		</div>
@@ -107,8 +108,8 @@
 
 <!-- Trending Category Start -->
 <section class="pb-0" id="mains">
-	<div class="container">	
-		
+	<div class="container">
+
 		<div class="row align-items-center justify-content-center">
 			<div class="col-xl-7 col-lg-8 col-md-11 col-sm-12">
 				<div class="secHeading-wrap text-center">
@@ -117,18 +118,18 @@
 				</div>
 			</div>
 		</div>
-	
+
 		<div class="row align-items-center justify-content-center">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 				<div class="owl-carousel categorySlider">
-					
+
 					<!-- includes/Home/index/categories.blade.php -->
 					@include('includes.Home.index.categories')
-					
+
 				</div>
 			</div>
 		</div>
-	
+
 	</div>
 </section>
 <!-- Trending Category End -->
@@ -149,14 +150,14 @@
 		<div class="row align-items-center justify-content-center">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 				<div class="owl-carousel owl-theme itemslider">
-					
+
 					<!-- includes/Home/index/listings.blade.php -->
 					@include('includes.Home.index.listings')
-					
+
 				</div>
 			</div>
 		</div>
-	
+
 	</div>
 </section>
 <!-- Popular Listings End -->
@@ -173,18 +174,18 @@
 				</div>
 			</div>
 		</div>
-	
+
 		<div class="row align-items-center justify-content-center">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 				<div class="owl-carousel owl-theme reviewsSlide">
-					
+
 					<!-- includes/Home/index/reviews.blade.php -->
 					@include('includes.Home.index.reviews')
-					
+
 				</div>
 			</div>
 		</div>
-	
+
 	</div>
 </section>
 <!-- Our Reviews End -->
@@ -202,14 +203,14 @@
 			</div>
 		</div>
 
-	
+
 		<div class="row align-items-center justify-content-center g-4">
-		
+
 			<!-- includes/Home/index/blog.blade.php -->
 			@include('includes.Home.index.blog')
-			
+
 		</div>
-	
+
 	</div>
 </section>
 <!-- Latest Updates End -->
@@ -217,7 +218,7 @@
 <!-- Call To Action Start -->
 <section class="bg-cover bg-primary-2 position-relative py-5" style="background:url({{ asset('assets/img/brand-section.png') }})no-repeat;">
 	<div class="container">
-		
+
 		<!-- includes/Home/index/subscribe.blade.php -->
 		@include('includes.Home.index.subscribe')
 
@@ -237,6 +238,6 @@
 	@include('includes.Home.index.search')
 
 
-@include('includes.footer')  
+@include('includes.footer')
 
 @endsection

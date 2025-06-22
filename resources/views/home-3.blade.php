@@ -59,10 +59,14 @@
     </div>
 </div>
 
-<div class="container my-5">
-    <h2 class="fw-bold text-center mb-3">Quick Property Search</h2>
-    <div id="MBBv3_QuickSearch" filter="formType:simple2"></div>
+<!-- Buying Buddy Search Form -->
+<div class="container py-5">
+    <h2 class="text-center mb-4">Find Your Next Home</h2>
+    <div id="MBBv3_SearchForm"
+         filter="mls_id:mo294+listing_status:active,coming-soon+representation_type:any_listing">
+    </div>
 </div>
+
 
 <!-- Popular Listings Start -->
 <section class="hide-on-mobile">

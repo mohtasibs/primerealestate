@@ -134,3 +134,11 @@ Route::post('/rental-application', [RentalApplicationController::class, 'send'])
 
 Route::view('/community/chesterfield-wildwood', 'neighborhoods.chesterfield-wildwood')->name('community.cfw');
 Route::view('/community/ladue-frontenac-huntleigh', 'neighborhoods.ladue-frontenac-huntleigh')->name('community.ladue');
+
+Route::get('/listing-results', function () {
+    return view('pages.listing-results');
+})->name('listing.results');
+
+Route::get('/listing-details', function () {
+    return view('pages.listing-details');
+})->name('listing.details');

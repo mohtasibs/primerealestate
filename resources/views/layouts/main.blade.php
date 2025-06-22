@@ -9,10 +9,16 @@
     <title>Prime Real Estate</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(base_path('assets/img/favicon.png')) }}">
 
+    <!-- ✅ Buying Buddy CSS & Setup -->
+    <script src="https://www.mbb2.com/version3/css/theme/acid/ESXzarvb"></script>
     <script>
         var MBB = { seo: "false", data: { acid: "ESXzarvb" } };
         function mbbMapLoaded() { MBB.googleMaps = true; };
     </script>
+    <!-- Google Maps JS (MUST load after mbbMapLoaded) -->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=mbbMapLoaded&libraries=places&key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
+    <!-- Buying Buddy Main Script -->
+    <script src="https://d2w6u17gtnamny.cloudfront.net/scripts/my-buying-buddy.5.0.js.gz"></script>
 
     <!-- Core CSS with cache busting -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}?v={{ filemtime(base_path('assets/css/bootstrap.min.css')) }}" rel="stylesheet">
@@ -35,6 +41,9 @@
             @yield('content')
         </div>
     </div>
+
+    <!-- ✅ Buying Buddy Disclaimer (required for compliance) -->
+    <div id="MBBv3_Disclaimer"></div>
 
     <a href="#" class="btn-primary back-to-top" id="back2Top"><i class="bi bi-arrow-up"></i></a>
 

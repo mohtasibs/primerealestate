@@ -43,7 +43,7 @@
                             ['img' => 'gallery-3.jpg', 'alt' => 'Kitchen'],
                             ['img' => 'gallery-7.jpg', 'alt' => 'Bedroom 1'],
                             ['img' => 'gallery-8.jpg', 'alt' => 'Bedroom 2'],
-                            ['img' => 'gallery-9.jpg', 'alt' => 'Bathroom'],
+                            ['img' => 'gallery-9.JPG', 'alt' => 'Bathroom'],
                         ];
                     @endphp
 

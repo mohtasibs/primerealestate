@@ -34,8 +34,8 @@
                 <div class="row g-3 mb-4">
                     @php
                         $gallery = [
-                            ['img' => 'list-2.jpg', 'alt' => 'Exterior Front View'],
-                            ['img' => 'gallery-4.jpg', 'alt' => 'Rear View'],
+                            ['img' => 'list-2.JPG', 'alt' => 'Exterior Front View'],
+                            ['img' => 'gallery-4.JPG', 'alt' => 'Rear View'],
                             ['img' => 'gallery-5.jpg', 'alt' => 'Kitchen with Dishwasher'],
                             ['img' => 'gallery-10.jpg', 'alt' => 'Bathroom'],
                             ['img' => 'gallery-11.jpg', 'alt' => 'Living Room'],

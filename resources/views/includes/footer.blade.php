@@ -86,5 +86,9 @@
         <div class="text-center border-top border-secondary pt-3 mt-4">
             <small class="text-white-50">&copy; <script>document.write(new Date().getFullYear())</script>Prime Real Estate & Property Management. All Rights Reserved </small>
         </div>
+
+        <!-- Buying Buddy Disclaimer Widget -->
+        <div id="MBBv3_Disclaimer" class="text-center mt-3"></div>
+
     </div>
 </footer>

@@ -62,6 +62,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script> new WOW().init(); </script>
 
+    <!-- Buying Buddy Widget Loader -->
+    <script async src="https://cdn.buyingbuddy.com/widgets/bb.js?key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
+
+
     <!-- Optional Counter Script -->
     <script>
         try {

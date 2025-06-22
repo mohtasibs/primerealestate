@@ -59,6 +59,11 @@
     </div>
 </div>
 
+<div class="container my-5">
+    <h2 class="fw-bold text-center mb-3">Quick Property Search</h2>
+    <div id="MBBv3_QuickSearch" filter="formType:simple2"></div>
+</div>
+
 <!-- Popular Listings Start -->
 <section class="hide-on-mobile">
 	<div class="container">
@@ -86,12 +91,6 @@
 	</div>
 </section>
 <!-- Popular Listings End -->
-
-<!-- Buying Buddy Quick Search Widget for Testing -->
-<div id="MBBv3_QuickSearch" filter="formType:simple2"></div>
-
-<!-- Buying Buddy Script (if not already included in layout) -->
-<script async src="https://cdn.buyingbuddy.com/widgets/bb.js?key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
 
 
 <!-- Passionate Section Start -->
@@ -601,5 +600,8 @@
 
 
 @include('includes.footer')
+
+<!-- Buying Buddy Script (if not already included in layout) -->
+<script async src="https://cdn.buyingbuddy.com/widgets/bb.js?key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
 
 @endsection

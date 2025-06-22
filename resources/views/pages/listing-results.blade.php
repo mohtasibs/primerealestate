@@ -6,7 +6,7 @@
 
 @include('includes.navbar2')
 
-<div class="container my-5">
+<div class="container my-5" id="listing-results">
     <h2 class="fw-bold text-center mb-4">Property Search Results</h2>
 
     <!-- Buying Buddy Search Results Widget -->
@@ -14,8 +14,5 @@
 </div>
 
 @include('includes.footer')
-
-<!-- Buying Buddy Script -->
-<script async src="https://cdn.buyingbuddy.com/widgets/bb.js?key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
 
 @endsection

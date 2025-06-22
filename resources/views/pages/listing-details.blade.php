@@ -15,7 +15,4 @@
 
 @include('includes.footer')
 
-<!-- Buying Buddy Script -->
-<script async src="https://cdn.buyingbuddy.com/widgets/bb.js?key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
-
 @endsection

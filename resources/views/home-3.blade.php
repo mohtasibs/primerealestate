@@ -251,7 +251,7 @@
                 <article class="property-card shadow-sm rounded overflow-hidden border h-100">
                     <div class="position-relative">
                         <a href="{{ route('property.mount-olive') }}" target="_blank" aria-label="View property details for Mount Olive, IL">
-                            <img src="{{ asset('assets/img/list-2.jpg') }}"
+                            <img src="{{ asset('assets/img/list-2.JPG') }}"
                                  alt="2 Bedroom 1 Bath Duplex in Mount Olive, IL"
                                  class="img-fluid w-100 property-img-hover small-property-img"
                                  loading="lazy">

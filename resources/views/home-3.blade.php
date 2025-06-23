@@ -62,9 +62,7 @@
 <!-- Buying Buddy Search Form -->
 <div class="container py-5">
     <h2 class="text-center mb-4">Find Your Next Home</h2>
-    <div id="MBBv3_SearchForm"
-         filter="mls_id:mo294+listing_status:active,coming-soon+representation_type:any_listing">
-    </div>
+    <div id="MBBv3_QuickSearch" filter="formType:simple2"></div>
 </div>
 
 
@@ -604,8 +602,5 @@
 
 
 @include('includes.footer')
-
-<!-- Buying Buddy Script (if not already included in layout) -->
-<script async src="https://cdn.buyingbuddy.com/widgets/bb.js?key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
 
 @endsection

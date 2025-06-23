@@ -127,9 +127,6 @@ Route::post('/submit-feedback', [FeedbackController::class, 'send'])->name('feed
 
 Route::post('/home-valuation', [ValuationController::class, 'send'])->name('valuation.send');
 
-Route::view('/listing-results', 'pages.listing-results')->name('listing.results');
-Route::view('/listing-details', 'pages.listing-details')->name('listing.details');
-
 Route::post('/rental-application', [RentalApplicationController::class, 'send'])->name('rental.send');
 
 Route::view('/community/chesterfield-wildwood', 'neighborhoods.chesterfield-wildwood')->name('community.cfw');

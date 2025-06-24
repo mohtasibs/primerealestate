@@ -18,7 +18,9 @@
     <!-- Google Maps JS (MUST load after mbbMapLoaded) -->
     <script src="https://maps.googleapis.com/maps/api/js?callback=mbbMapLoaded&libraries=places&key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
     <!-- Buying Buddy Main Script -->
-    <script src="https://d2w6u17gtnamny.cloudfront.net/scripts/my-buying-buddy.5.0.js.gz"></script>
+    <script src="https://d2w6u17ngtanmy.cloudfront.net/scripts/my-buying-buddy.5.0.js.gz"></script>
+
+
 
     <!-- Core CSS with cache busting -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}?v={{ filemtime(base_path('assets/css/bootstrap.min.css')) }}" rel="stylesheet">
@@ -100,5 +102,8 @@
     </script>
 
     @yield('scripts')
+
+
+
 </body>
 </html>

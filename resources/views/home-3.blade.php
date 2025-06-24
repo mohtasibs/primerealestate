@@ -17,9 +17,8 @@
     $videoPath = base_path('assets/video/Homepage Video.mp4');
     $videoVersion = file_exists($videoPath) ? filemtime($videoPath) : time();
 @endphp
-
 <!-- Hero Start -->
-<div class="video-hero-section mt-navbar-adjust position-relative">
+<div class="video-hero-section mt-navbar-adjust position-relative d-flex justify-content-center align-items-center" style="min-height: 100vh;">
     <!-- Optimized Video Background -->
     <video id="bgVideo" autoplay muted loop playsinline preload="none" poster="...">
         <source data-src="{{ asset('assets/video/Homepage Video.webm') }}" type="video/mp4">
@@ -27,14 +26,19 @@
 
     <div class="position-absolute video-bg-clr top-0 start-0 w-100 h-100"></div>
 
-    <div class="container position-relative" style="z-index: 2;">
+    <!-- Search Bar Centered -->
+    <div class="position-relative z-3 w-100 px-3" style="max-width: 800px;">
+        <div id="MBBv3_QuickSearch" filter="formType:simple2+mls_id:mo294"></div>
+    </div>
+
+    <!-- <div class="container position-relative" style="z-index: 2;">
         <form action="{{ url('/listing-results') }}" method="GET" class="row justify-content-center align-items-center g-2 search-bar-wrapper">
-            <!-- Text Input -->
+
             <div class="col-lg-6 col-md-5 col-sm-12">
                 <input type="text" name="location" class="form-control search-field" placeholder="City, State, Zip or MLS#" />
             </div>
 
-            <!-- Dropdown -->
+
             <div class="col-lg-3 col-md-4 col-sm-12">
                 <select class="form-select search-field category-dropdown" name="propertyType">
                     <option value="">Property Type</option>
@@ -49,22 +53,15 @@
                 </select>
             </div>
 
-            <!-- Search Button -->
+
             <div class="col-lg-2 col-md-3 col-sm-12">
                 <button type="submit" class="btn btn-primary search-btn w-100">
                     <i class="bi bi-search me-1"></i> SEARCH
                 </button>
             </div>
         </form>
-    </div>
+    </div> -->
 </div>
-
-<!-- Buying Buddy Search Form -->
-<div class="container py-5">
-    <h2 class="text-center mb-4">Find Your Next Home</h2>
-    <div id="MBBv3_QuickSearch" filter="formType:simple2"></div>
-</div>
-
 
 <!-- Popular Listings Start -->
 <section class="hide-on-mobile">

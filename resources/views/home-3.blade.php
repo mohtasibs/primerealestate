@@ -7,6 +7,15 @@
 
 @include('includes.navbar2')
 
+<style>
+/* Target the Advanced Search link and set text color to white */
+#MBBv3Form .bfg-mb10 a,
+#MBBv3_QuickSearch .bfg-mb10 a {
+    color: #ffffff !important;
+}
+</style>
+
+
 <div id="preloader">
 	<div class="preloader"><span></span><span></span></div>
 </div>
@@ -17,8 +26,10 @@
     $videoPath = base_path('assets/video/Homepage Video.mp4');
     $videoVersion = file_exists($videoPath) ? filemtime($videoPath) : time();
 @endphp
+
 <!-- Hero Start -->
-<div class="video-hero-section mt-navbar-adjust position-relative d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+<div class="video-hero-section mt-navbar-adjust position-relative d-flex justify-content-center align-items-center">
+
     <!-- Optimized Video Background -->
     <video id="bgVideo" autoplay muted loop playsinline preload="none" poster="...">
         <source data-src="{{ asset('assets/video/Homepage Video.webm') }}" type="video/mp4">
@@ -26,9 +37,11 @@
 
     <div class="position-absolute video-bg-clr top-0 start-0 w-100 h-100"></div>
 
-    <!-- Search Bar Centered -->
-    <div class="position-relative z-3 w-100 px-3" style="max-width: 800px;">
-        <div id="MBBv3_QuickSearch" filter="formType:simple2+mls_id:mo294"></div>
+    <!-- Search Bar Slightly Below Center -->
+    <div class="position-absolute w-100 px-3" style="top: 70%; transform: translateY(-50%); z-index: 3;">
+        <div class="mx-auto" style="max-width: 800px;">
+            <div id="MBBv3_QuickSearch" filter="advancedSearch:on+formType:simple2+mls_id:mo294+labelcolor:ffffff"></div>
+        </div>
     </div>
 
     <!-- <div class="container position-relative" style="z-index: 2;">
@@ -61,12 +74,13 @@
             </div>
         </form>
     </div> -->
+
 </div>
 
-<!-- Popular Listings Start -->
-<section class="hide-on-mobile">
-	<div class="container">
 
+<!-- Popular Listings Start -->
+<div class="hide-on-mobile pt-5">
+	<div class="container">
 		<div class="row align-items-center justify-content-center">
 			<div class="col-xl-7 col-lg-8 col-md-11 col-sm-12">
 				<div class="secHeading-wrap text-center">
@@ -76,24 +90,16 @@
 		</div>
 
 
-		<div class="row align-items-center justify-content-center">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-				<div class="owl-carousel owl-theme itemslider">
-
-					<!-- includes/Home/home-3/listings2.blade.php -->
-					@include('includes.Home.home-3.listings2')
-
-				</div>
-			</div>
-		</div>
+	    <div id="MBBv3_FeaturedGallery" filter="carousel:true+representation_type:any_listing+office_id:PMPM01+delay:2500+mls_id:mo294+listing_status:active,coming-soon+order:FIELD(agent_id,'SYEDJ') desc, create_dt desc,price desc"></div>
 
 	</div>
 </section>
 <!-- Popular Listings End -->
 
 
+
 <!-- Passionate Section Start -->
-<div class="passionate-section pb-5 bg-light text-center">
+<div class="passionate-section pb-5 pt-2 bg-light text-center">
     <div class="container">
         <div class="wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
             <h2 class="fw-bold mb-4 display-5 text-dark main-title-heading">Passionate About Being Different</h2>
@@ -145,7 +151,7 @@
 </div>
 
 <!-- About Us Section - SEO Optimized with Lazy-Loaded Video -->
-<section class="aboutus-section bg-light pb-3">
+<div class="aboutus-section bg-light pb-5 pt-5">
     <div class="container">
         <div class="row align-items-center justify-content-between">
 
@@ -207,7 +213,7 @@
 
 
 <!-- Popular Listings Start -->
-<section class="light-top-gredient py-5">
+<section class="light-top-gredient pb-5 pt-5">
     <div class="container">
 
         <!-- Section Heading -->

@@ -1,3 +1,14 @@
+# -----------------------------------------
+# 🔒 Disable ModSecurity (Hostinger-specific)
+# -----------------------------------------
+<IfModule mod_security.c>
+    SecFilterEngine Off
+    SecFilterScanPOST Off
+</IfModule>
+
+# -----------------------------------------
+# ✅ Laravel Rewrite Rules
+# -----------------------------------------
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
@@ -19,7 +30,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
-
 
 # -----------------------------------------
 # ✅ GZIP Compression

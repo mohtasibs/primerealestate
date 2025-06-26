@@ -180,6 +180,12 @@ h6 {
     transition: 0.3s;
 }
 
+.contact-illustration-small {
+    max-width: 400px;
+    height: auto;
+}
+
+
 .no-hover {
     background-color: #dc3545 !important;
     /* Same as btn-danger */

@@ -64,7 +64,7 @@
 
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" name="name" class="form-control bg-light" placeholder="Your Name *" aria-label="Your Name" required>
+                                <input type="text" name="name" class="form-control bg-light" placeholder="Name *" aria-label="Name" required>
                             </div>
                             <div class="col-md-6">
                                 <input type="tel" name="number" class="form-control bg-light" placeholder="Phone Number *" aria-label="Phone Number" required>
@@ -79,7 +79,7 @@
                                 <textarea name="query" class="form-control bg-light" rows="5" placeholder="Enter Your Message *" aria-label="Message" required></textarea>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-danger w-100" role="button">
+                                <button type="submit" class="btn no-hover w-100" role="button">
                                     Send Message <i class="fa-solid fa-paper-plane ms-2"></i>
                                 </button>
                             </div>

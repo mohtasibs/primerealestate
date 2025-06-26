@@ -77,7 +77,7 @@
 							<li><i class="bi bi-wallet2 me-2 text-danger"></i>Deposit: $950</li>
 							<li><i class="bi bi-door-closed me-2 text-danger"></i>2 Bed, 1 Bath</li>
 							<li><i class="bi bi-car-front-fill me-2 text-danger"></i>1 Car Attached Garage</li>
-							<li><i class="bi bi-trash3-fill me-2 text-danger"></i>Trash Included</li>
+							<li class="mb-1 text-muted"><i class="bi bi-trash3-fill me-2 text-danger"></i>Lawn Care Included</li>
 						</ul>
 
 						<!-- Highlight Cards -->
@@ -86,7 +86,7 @@
 								['Type', 'Multifamily'],
 								['Year Built', '2012'],
 								['Size', '1000 sqft'],
-								['Status', 'For Lease']
+								['Status', 'Call / Text']
 							] as [$label, $value])
 								<div class="flex-fill text-center border rounded-3 p-3 bg-light" style="min-width: 150px;">
 									<h6 class="mb-1 text-dark fw-semibold">{{ $label }}</h6>
@@ -118,7 +118,7 @@
 							@csrf
 							<div class="row g-3">
 								<div class="col-md-6">
-									<input type="text" name="name" class="form-control bg-light" placeholder="Your Name *" required>
+									<input type="text" name="name" class="form-control bg-light" placeholder="Name *" required>
 								</div>
 								<div class="col-md-6">
 									<input type="text" name="number" class="form-control bg-light" placeholder="Phone Number *" required>
@@ -152,7 +152,7 @@
 
 						@foreach([
 							['route' => 'property.stonington', 'img' => 'list-1.jpg', 'desc' => '2 Bedroom 1 Bath Duplex, 1 car garage', 'price' => '$750'],
-							['route' => 'property.mount-olive', 'img' => 'list-2.jpg', 'desc' => '2 Bedroom 1 Bath Duplex, 1 car garage', 'price' => '$750']
+							['route' => 'property.mount-olive', 'img' => 'list-2.JPG', 'desc' => '2 Bedroom 1 Bath Duplex, 1 car garage', 'price' => '$750']
 						] as $related)
 							<div class="d-flex gap-3 mb-3 pb-3 border-bottom">
 								<a href="{{ route($related['route']) }}">
@@ -160,7 +160,6 @@
 								</a>
 								<div class="flex-grow-1">
 									<div class="mb-1">
-										<span class="badge bg-danger me-1">For Lease</span>
 										<span class="badge bg-primary">{{ $related['price'] }}</span>
 									</div>
 									<a href="{{ route($related['route']) }}" class="text-dark fw-medium d-block mb-1 text-decoration-none">

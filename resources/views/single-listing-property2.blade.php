@@ -61,7 +61,7 @@
                             <li class="mb-1 text-muted"><i class="bi bi-wallet2 me-2 text-danger"></i>Deposit: $950</li>
                             <li class="mb-1 text-muted"><i class="bi bi-door-closed me-2 text-danger"></i>2 Bedrooms, 1 Bathroom</li>
                             <li class="mb-1 text-muted"><i class="bi bi-car-front-fill me-2 text-danger"></i>Attached Garage</li>
-                            <li class="mb-1 text-muted"><i class="bi bi-trash3-fill me-2 text-danger"></i>Trash Service Included</li>
+                            <li class="mb-1 text-muted"><i class="bi bi-trash3-fill me-2 text-danger"></i>Trash & Lawn Care Included</li>
                         </ul>
 
                         <!-- Features -->
@@ -71,7 +71,7 @@
                                     ['label' => 'Property Type', 'value' => 'Multifamily'],
                                     ['label' => 'Year Built', 'value' => '2012'],
                                     ['label' => 'Size', 'value' => '1000 sqft'],
-                                    ['label' => 'Status', 'value' => 'Available for Lease'],
+                                    ['label' => 'Status', 'value' => 'Call / Text'],
                                 ];
                             @endphp
                             @foreach($features as $feature)
@@ -95,10 +95,10 @@
                 <!-- Contact Form -->
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h4 class="fw-semibold mb-3">Contact About This Listing</h4>
+                        <h4 class="fw-semibold mb-3">Contact About This Property</h4>
                         <form method="POST" action="{{ route('contact.send') }}">
                             @csrf
-                            <input type="text" name="name" class="form-control mb-3" placeholder="Full Name *" required>
+                            <input type="text" name="name" class="form-control mb-3" placeholder="Name *" required>
                             <input type="text" name="number" class="form-control mb-3" placeholder="Phone Number *" required>
                             <input type="email" name="email" class="form-control mb-3" placeholder="Email Address *" required>
                             <input type="text" name="subject" value="Inquiry about Mount Olive Duplex" class="form-control mb-3" required>
@@ -129,7 +129,7 @@
                                 ],
                                 [
                                     'route' => 'property.mount-olive',
-                                    'img' => 'list-2.jpg',
+                                    'img' => 'list-2.JPG',
                                     'title' => '2 Bed 1 Bath Duplex, Mount Olive, IL',
                                     'price' => '$750',
                                     'features' => 'Bedrooms: 2 | Bathrooms: 1 | Parking: 1'
@@ -143,7 +143,6 @@
                                 </a>
                                 <div class="flex-grow-1">
                                     <div class="mb-1">
-                                        <span class="badge bg-danger me-1">For Lease</span>
                                         <span class="badge bg-primary">{{ $item['price'] }}</span>
                                     </div>
                                     <a href="{{ route($item['route']) }}" class="text-dark fw-medium text-decoration-none d-block mb-1">{{ $item['title'] }}</a>

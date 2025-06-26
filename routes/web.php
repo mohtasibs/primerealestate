@@ -131,6 +131,16 @@ Route::post('/rental-application', [RentalApplicationController::class, 'send'])
 
 Route::view('/community/chesterfield-wildwood', 'neighborhoods.chesterfield-wildwood')->name('community.cfw');
 Route::view('/community/ladue-frontenac-huntleigh', 'neighborhoods.ladue-frontenac-huntleigh')->name('community.ladue');
+Route::view('/community/kirkwood-webster', 'neighborhoods.kirkwood-webster')->name('community.kirkwoodwebster');
+Route::view('/community/clayton-university-city', 'neighborhoods.clayton-university-city')->name('community.claytonuc');
+Route::view('/community/stcharles-ofallon-stlouis', 'neighborhoods.stcharles-ofallon-stlouis')->name('community.stcharles');
+Route::view('/community/town-country', 'neighborhoods.town-country')->name('community.towncountry');
+Route::view('/community/edwardsville', 'neighborhoods.edwardsville')->name('community.edwardsville');
+Route::view('/community/collinsville', 'neighborhoods.collinsville')->name('community.collinsville');
+Route::view('/community/glen-carbon', 'neighborhoods.glen-carbon')->name('community.glen-carbon');
+
+
+
 
 Route::get('/listing-results', function () {
     return view('pages.listing-results');
@@ -139,3 +149,9 @@ Route::get('/listing-results', function () {
 Route::get('/listing-details', function () {
     return view('pages.listing-details');
 })->name('listing.details');
+
+
+Route::view('/our-listings', 'search-properties.our-listings')->name('search.ourListings');
+Route::view('/mo-properties', 'search-properties.mo-properties')->name('search.moProperties');
+Route::view('/il-properties', 'search-properties.il-properties')->name('search.ilProperties');
+

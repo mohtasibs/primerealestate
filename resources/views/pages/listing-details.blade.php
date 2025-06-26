@@ -6,6 +6,10 @@
 
 @include('includes.navbar2')
 
+<div id="preloader">
+	<div class="preloader"><span></span><span></span></div>
+</div>
+
 <div class="container my-5">
     <h2 class="fw-bold text-center mb-4">Property Details</h2>
 

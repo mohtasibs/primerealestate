@@ -7,14 +7,6 @@
 
 @include('includes.navbar2')
 
-<style>
-/* Target the Advanced Search link and set text color to white */
-#MBBv3Form .bfg-mb10 a,
-#MBBv3_QuickSearch .bfg-mb10 a {
-    color: #ffffff !important;
-}
-</style>
-
 
 <div id="preloader">
 	<div class="preloader"><span></span><span></span></div>
@@ -39,10 +31,11 @@
 
     <!-- Search Bar Slightly Below Center -->
     <div class="position-absolute w-100 px-3" style="top: 70%; transform: translateY(-50%); z-index: 3;">
-        <div class="mx-auto" style="max-width: 800px;">
-            <div id="MBBv3_QuickSearch" filter="advancedSearch:on+formType:simple2+mls_id:mo294+labelcolor:ffffff"></div>
+        <div class="mx-auto">
+            <div id="MBBv3_SearchForm" filter="show-options:on+mls_id:mo294+listing_status:active,active-rental+representation_type:any_listing"></div>
         </div>
     </div>
+  
 
     <!-- <div class="container position-relative" style="z-index: 2;">
         <form action="{{ url('/listing-results') }}" method="GET" class="row justify-content-center align-items-center g-2 search-bar-wrapper">
@@ -99,7 +92,7 @@
 
 
 <!-- Passionate Section Start -->
-<div class="passionate-section pb-5 pt-2 bg-light text-center">
+<div class="passionate-section pb-5 pt-3 bg-light text-center">
     <div class="container">
         <div class="wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
             <h2 class="fw-bold mb-4 display-5 text-dark main-title-heading">Passionate About Being Different</h2>
@@ -111,7 +104,7 @@
         <div class="row g-0 g-md-4 mt-4">
           <!-- Card 1 -->
             <div class="col-md-4 wow animate__animated animate__fadeInUp hide-on-mobile-sm" data-wow-delay="0.3s">
-                <a href="{{ url('/home-search') }}" class="card h-100 border-0 text-white text-decoration-none position-relative overflow-hidden card-hover shadow-lg" aria-label="Explore Home Search">
+                <a href="{{ url('/listing-results') }}" class="card h-100 border-0 text-white text-decoration-none position-relative overflow-hidden card-hover shadow-lg" aria-label="Explore Home Search">
                     <img src="{{ asset('assets/img/card-home-search.jpg') }}" alt="Explore home search options at Prime Real Estate" loading="lazy"
                         class="card-img h-100 object-fit-cover" width="100%" height="auto">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center bg-dark bg-opacity-50 hover-overlay">
@@ -121,7 +114,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="col-md-4 wow animate__animated animate__fadeInUp hide-on-mobile-sm" data-wow-delay="0.5s">
+            <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
                 <a href="{{ url('/home-valuation') }}" class="card h-100 border-0 text-white text-decoration-none position-relative overflow-hidden card-hover shadow-lg" aria-label="Request Home Valuation">
                     <img src="{{ asset('assets/img/card-home-valuation.png') }}" alt="Get your home valuation with Prime Real Estate" loading="lazy"
                         class="card-img h-100 object-fit-cover" width="100%" height="auto">
@@ -133,7 +126,7 @@
 
 
             <!-- Card 3 -->
-            <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+            <div class="col-md-4 wow animate__animated animate__fadeInUp hide-on-mobile-sm" data-wow-delay="0.7s">
                 <a href="{{ url('/contact-us') }}" class="card h-100 border-0 text-white text-decoration-none position-relative overflow-hidden card-hover shadow-lg" aria-label="Connect with Agent">
                     <img
                         src="{{ asset('assets/img/card-connect.png') }}"
@@ -151,7 +144,7 @@
 </div>
 
 <!-- About Us Section - SEO Optimized with Lazy-Loaded Video -->
-<div class="aboutus-section bg-light pb-5 pt-5">
+<div class="aboutus-section bg-light pb-5 pt-5 hide-on-mobile">
     <div class="container">
         <div class="row align-items-center justify-content-between">
 
@@ -236,7 +229,6 @@
                                  class="img-fluid w-100 property-img-hover small-property-img"
                                  loading="lazy">
                         </a>
-                        <span class="badge bg-danger position-absolute top-0 start-0 m-3">For Lease</span>
                         <span class="badge bg-primary position-absolute top-0 end-0 m-3">$750</span>
                     </div>
                     <div class="p-3">
@@ -268,13 +260,12 @@
                                  class="img-fluid w-100 property-img-hover small-property-img"
                                  loading="lazy">
                         </a>
-                        <span class="badge bg-danger position-absolute top-0 start-0 m-3">For Lease</span>
                         <span class="badge bg-primary position-absolute top-0 end-0 m-3">$750</span>
                     </div>
                     <div class="p-3">
                         <h5 class="fw-semibold mb-2">
                             <a href="{{ route('property.mount-olive') }}" class="text-decoration-none text-dark">
-                                2 Bedroom 1 Bath Duplex, 1 Car Garage, Lawn Care Included
+                                2 Bedroom 1 Bath Duplex, 1 Car Garage, Trash & Lawn Care Included
                             </a>
                         </h5>
                         <p class="text-muted mb-2">
@@ -342,6 +333,27 @@
                         'img' => 'community-6.avif',
                         'lat' => '38.6248° N',
                         'lon' => '90.4690° W'
+                    ],
+                    [
+                        'slug' => 'edwardsville',
+                        'name' => 'Edwardsville, IL',
+                        'img' => 'community-7.jpeg',
+                        'lat' => '38.8114° N',
+                        'lon' => '89.9532° W'
+                    ],
+                    [
+                        'slug' => 'collinsville',
+                        'name' => 'Collinsville, IL',
+                        'img' => 'community-8.jpeg',
+                        'lat' => '38.6703° N',
+                        'lon' => '89.9846° W'
+                    ],
+                    [
+                        'slug' => 'glen-carbon',
+                        'name' => 'Glen Carbon, IL',
+                        'img' => 'community-9.jpg',
+                        'lat' => '38.7484° N',
+                        'lon' => '89.9832° W'
                     ]
                 ];
             @endphp
@@ -477,7 +489,7 @@
         <div class="row g-0">
 
             <!-- Sellers Block -->
-            <div class="col-md-6">
+            <div class="col-md-6 hide-on-mobile-sm">
                 <div class="position-relative bg-image-section" style="background-image: url('{{ asset('assets/img/sell-house.jpg') }}');">
                     <div class="overlay d-flex flex-column justify-content-center align-items-center text-white text-center px-4 h-100">
                         <h6 class="text-uppercase text-light mb-2">For Sellers</h6>
@@ -493,7 +505,7 @@
                     <div class="overlay d-flex flex-column justify-content-center align-items-center text-white text-center px-4 h-100">
                         <h6 class="text-uppercase text-light mb-2">For Buyers</h6>
                         <h2 class="display-5 fw-semibold text-light mb-4">Are You Looking To Buy A Home?</h2>
-                        <a href="{{ url('/home-search') }}" class="btn btn-outline-light rounded-pill px-4 py-2">Search Listings</a>
+                        <a href="{{ url('/listing-results') }}" class="btn btn-outline-light rounded-pill px-4 py-2">Search Listings</a>
                     </div>
                 </div>
             </div>

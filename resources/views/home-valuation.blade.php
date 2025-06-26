@@ -60,7 +60,7 @@
 
                             <div class="col-12">
                                 <label for="address" class="visually-hidden">Address</label>
-                                <input type="text" id="address" name="address" class="form-control" placeholder="Full Address" required>
+                                <input type="text" id="address" name="address" class="form-control" placeholder="Address" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="city" class="visually-hidden">City</label>

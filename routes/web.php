@@ -137,7 +137,7 @@ Route::view('/community/stcharles-ofallon-stlouis', 'neighborhoods.stcharles-ofa
 Route::view('/community/town-country', 'neighborhoods.town-country')->name('community.towncountry');
 Route::view('/community/edwardsville', 'neighborhoods.edwardsville')->name('community.edwardsville');
 Route::view('/community/collinsville', 'neighborhoods.collinsville')->name('community.collinsville');
-Route::view('/community/glen-carbon', 'neighborhoods.glen-carbon')->name('community.glen-carbon');
+Route::view('/community/ofallon', 'neighborhoods.ofallon')->name('community.ofallon');
 
 
 

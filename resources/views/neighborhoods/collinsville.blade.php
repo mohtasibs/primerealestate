@@ -21,7 +21,7 @@
 
     <div class="container position-relative z-2 py-5">
         <p class="text-uppercase fw-semibold small text-white">Welcome To</p>
-        <h1 class="display-4 fw-bold text-white">Collinsville, IL</h1>
+        <h1 class="display-4 fw-bold text-white">Collinsville</h1>
         <p class="mb-4 text-white">38.6703° N, 89.9846° W</p>
         <a href="#featured-properties" class="neighborhood-scroll-btn" aria-label="Scroll Down">
             <i class="bi bi-chevron-down fs-4"></i>

@@ -308,24 +308,24 @@
                     ],
                     [
                         'slug' => 'edwardsville',
-                        'name' => 'Edwardsville, IL',
+                        'name' => 'Edwardsville',
                         'img' => 'community-7.jpeg',
                         'lat' => '38.8114° N',
                         'lon' => '89.9532° W'
                     ],
                     [
                         'slug' => 'collinsville',
-                        'name' => 'Collinsville, IL',
+                        'name' => 'Collinsville',
                         'img' => 'community-8.jpeg',
                         'lat' => '38.6703° N',
                         'lon' => '89.9846° W'
                     ],
                     [
-                        'slug' => 'glen-carbon',
-                        'name' => 'Glen Carbon, IL',
+                        'slug' => 'ofallon',
+                        'name' => 'O'Fallon',
                         'img' => 'community-9.jpg',
-                        'lat' => '38.7484° N',
-                        'lon' => '89.9832° W'
+                        'lat' => '38.5922° N',
+                        'lon' => '89.9112° W'
                     ]
                 ];
             @endphp
@@ -614,13 +614,6 @@ document.addEventListener('DOMContentLoaded', function () {
       margin-left: 0 !important;
       margin-right: 0 !important;
     }
-
-    [class*="col-"] {
-      padding-left: 12px;
-      padding-right: 12px;
-      box-sizing: border-box;
-    }
-
 </style>
 
 	<!-- includes/Home/index/log.blade.php -->

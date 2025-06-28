@@ -12,7 +12,7 @@ class ValuationController extends Controller
         $request->validate([
             'first_name' => 'required|string',
             'last_name' => 'required|string',
-            'email' => 'required|email',a
+            'email' => 'required|email',
             'mobile' => 'required|string',
             'message' => 'required|string',
         ]);

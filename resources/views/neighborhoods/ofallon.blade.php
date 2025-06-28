@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
-@section('title', 'Glen Carbon, IL')
-@section('meta_description', 'Discover beautiful homes in Glen Carbon, IL – a growing community with charm and convenience.')
+@section('title', 'OFallon')
+@section('meta_description', "Discover beautiful homes in O'Fallon, IL – a growing community with charm and convenience.")
 
 @section('content')
 
@@ -13,7 +13,7 @@
 
 <!-- Hero Section -->
 <section class="neighborhood-hero-img position-relative text-white text-center d-flex align-items-center justify-content-center">
-    <img src="{{ asset('assets/img/community-9.jpg') }}"
+    <img src="{{ asset('assets/img/community-9.png') }}"
          alt="Glen Carbon, IL"
          class="img-fluid w-100 h-100 position-absolute top-0 start-0 object-fit-cover"
          style="z-index: 0;" loading="lazy">
@@ -21,37 +21,66 @@
 
     <div class="container position-relative z-2 py-5">
         <p class="text-uppercase fw-semibold small text-white">Welcome To</p>
-        <h1 class="display-4 fw-bold text-white">Glen Carbon, IL</h1>
-        <p class="mb-4 text-white">38.7484° N, 89.9832° W</p>
+        <h1 class="display-4 fw-bold text-white">O'Fallon</h1>
+        <p class="mb-4 text-white">38.5922° N, 89.9112° W</p>
         <a href="#featured-properties" class="neighborhood-scroll-btn" aria-label="Scroll Down">
             <i class="bi bi-chevron-down fs-4"></i>
         </a>
     </div>
 </section>
 
-<!-- Featured Properties -->
-<section id="featured-properties" class="py-5 bg-light">
+<!-- About Section -->
+<section id="about-neighborhood" class="py-5 bg-light">
     <div class="container">
-        <h3 class="fw-semibold text-center mb-3 pb-4">Featured Properties</h3>
-        <div id="MBBv3_FeaturedGallery"
-             filter="city:glen carbon+state:IL+representation_type:any_listing+limit:6+order:price desc">
+        <h2 class="fw-bold text-center mb-5">Welcome to O'Fallon</h2>
+        <div class="row g-4 justify-content-center align-items-stretch">
+            @php
+                $ofallonImages = [
+                    'ofallon-1.png',
+                    'ofallon-2.jpeg',
+                ];
+            @endphp
+
+            @foreach($ofallonImages as $img)
+                <div class="col-lg-6 col-md-6 col-sm-12 d-flex align-items-stretch">
+                    <div class="w-100 shadow rounded overflow-hidden" style="height: 380px;">
+                        <img src="{{ asset('assets/img/' . $img) }}"
+                             alt="O'Fallon Neighborhood Image"
+                             class="w-100 h-100"
+                             loading="lazy"
+                             style="object-fit: cover;">
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
 
-<!-- Map Section -->
-<section class="py-5 bg-white">
+
+
+
+<!-- Featured Properties -->
+<section id="featured-properties" class="py-5 bg-light">
     <div class="container">
-        <h3 class="fw-semibold text-center mb-3 pb-4">Explore on the Map</h3>
-        <div class="ratio ratio-16x9 rounded shadow">
-            <iframe
-                src="https://www.google.com/maps/embed/v1/view?key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc&center=38.7484,-89.9832&zoom=13&maptype=roadmap"
-                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                class="border-0">
-            </iframe>
-        </div>
+        <h3 class="fw-semibold text-center mb-3 pb-4">Featured Properties</h3>
+        <div id="MBBv3_FeaturedGallery" filter="mls_id:mo294+listing_status:active,active-rental+city:o'fallon+representation_type:any_listing+limit:12+order:price"></div>
     </div>
 </section>
+
+<!-- Map Section -->
+<section class="map-section">
+    <div class="container-fluid p-0">
+        <iframe
+            src="https://www.google.com/maps?q=38.592272,-89.911212&z=13&output=embed"
+            width="100%"
+            height="500"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
 
 <!-- Contact With Us Section -->
 <section class="py-5 bg-light">

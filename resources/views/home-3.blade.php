@@ -24,50 +24,25 @@
 
     <!-- Optimized Video Background -->
     <video id="bgVideo" autoplay muted loop playsinline preload="none" poster="...">
-        <source data-src="{{ asset('assets/video/Homepage Video.webm') }}" type="video/mp4">
+        <source data-src="{{ asset('assets/video/Homepage Video.webm') }}" type="video/webm">
     </video>
 
     <div class="position-absolute video-bg-clr top-0 start-0 w-100 h-100"></div>
 
-    <!-- Search Bar Slightly Below Center -->
+    <!-- Dynamic Search Bar Section -->
     <div class="position-absolute w-100 px-3" style="top: 70%; transform: translateY(-50%); z-index: 3;">
         <div class="mx-auto">
-            <div id="MBBv3_SearchForm" filter="show-options:on+mls_id:mo294+listing_status:active,active-rental+representation_type:any_listing"></div>
+            <!-- Desktop Search -->
+            <div id="desktop-search" class="search-widget">
+                <div id="MBBv3_SearchForm" filter="show-options:on+mls_id:mo294+listing_status:active,active-rental+representation_type:any_listing"></div>
+            </div>
+
+            <!-- Mobile Search -->
+            <div id="mobile-search" class="search-widget d-none">
+                <div id="MBBv3_QuickSearch" filter="formType:simple2+mls_id:mo294"></div>
+            </div>
         </div>
     </div>
-  
-
-    <!-- <div class="container position-relative" style="z-index: 2;">
-        <form action="{{ url('/listing-results') }}" method="GET" class="row justify-content-center align-items-center g-2 search-bar-wrapper">
-
-            <div class="col-lg-6 col-md-5 col-sm-12">
-                <input type="text" name="location" class="form-control search-field" placeholder="City, State, Zip or MLS#" />
-            </div>
-
-
-            <div class="col-lg-3 col-md-4 col-sm-12">
-                <select class="form-select search-field category-dropdown" name="propertyType">
-                    <option value="">Property Type</option>
-                    <option value="house">Any</option>
-                    <option value="apartment">Residential</option>
-                    <option value="land">Residential Income</option>
-                    <option value="lease">Residential Lease</option>
-                    <option value="commercial-sale">Commercial Sale</option>
-                    <option value="commercial-lease">Commercial Lease</option>
-                    <option value="lots">Land and Lots</option>
-                    <option value="farms">Farms</option>
-                </select>
-            </div>
-
-
-            <div class="col-lg-2 col-md-3 col-sm-12">
-                <button type="submit" class="btn btn-primary search-btn w-100">
-                    <i class="bi bi-search me-1"></i> SEARCH
-                </button>
-            </div>
-        </form>
-    </div> -->
-
 </div>
 
 
@@ -81,12 +56,9 @@
 				</div>
 			</div>
 		</div>
-
-
 	    <div id="MBBv3_FeaturedGallery" filter="carousel:true+representation_type:any_listing+office_id:PMPM01+delay:2500+mls_id:mo294+listing_status:active,coming-soon+order:FIELD(agent_id,'SYEDJ') desc, create_dt desc,price desc"></div>
-
 	</div>
-</section>
+</div>
 <!-- Popular Listings End -->
 
 
@@ -202,7 +174,7 @@
 
         </div>
     </div>
-</section>
+</div>
 
 
 <!-- Popular Listings Start -->
@@ -602,7 +574,54 @@
 </script>
 
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const isMobile = window.innerWidth <= 768;
 
+    const desktopSearch = document.getElementById('desktop-search');
+    const mobileSearch = document.getElementById('mobile-search');
+
+    if (isMobile) {
+        if (desktopSearch) desktopSearch.classList.add('d-none');
+        if (mobileSearch) mobileSearch.classList.remove('d-none');
+    } else {
+        if (desktopSearch) desktopSearch.classList.remove('d-none');
+        if (mobileSearch) mobileSearch.classList.add('d-none');
+    }
+
+    // Optional: re-check on window resize
+    window.addEventListener('resize', function () {
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            desktopSearch.classList.add('d-none');
+            mobileSearch.classList.remove('d-none');
+        } else {
+            desktopSearch.classList.remove('d-none');
+            mobileSearch.classList.add('d-none');
+        }
+    });
+});
+</script>
+
+
+<style>
+     html, body {
+      overflow-x: hidden;
+
+    }
+
+    .row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    [class*="col-"] {
+      padding-left: 12px;
+      padding-right: 12px;
+      box-sizing: border-box;
+    }
+
+</style>
 
 	<!-- includes/Home/index/log.blade.php -->
 	@include('includes.Home.index.log')

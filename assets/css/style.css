@@ -9076,6 +9076,9 @@ Responsiveness Start
     .neighborhood-scroll-btn i {
         font-size: 1.2rem;
     }
+    .sr-padd{
+        margin-top: 9rem !important;
+    }
 }
 
 @media (max-width: 576px) {
@@ -9173,7 +9176,7 @@ Responsiveness Start
 
 @media (max-width: 500px) {
     .video-hero-section {
-        height: calc(37vh - 37px);
+       height: calc(58vh - 58px);
 
     }
 }

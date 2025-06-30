@@ -116,7 +116,7 @@
 </div>
 
 <!-- About Us Section - SEO Optimized with Lazy-Loaded Video -->
-<div class="aboutus-section bg-light pb-5 pt-5 hide-on-mobile">
+<div class="aboutus-section bg-light pb-5 pt-5">
     <div class="container">
         <div class="row align-items-center justify-content-between">
 
@@ -323,7 +323,7 @@
                     [
                         'slug' => 'ofallon',
                         'name' => 'O'Fallon',
-                        'img' => 'community-9.jpg',
+                        'img' => 'community-9.png',
                         'lat' => '38.5922° N',
                         'lon' => '89.9112° W'
                     ]

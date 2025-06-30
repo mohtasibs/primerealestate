@@ -7,10 +7,6 @@
 <h3>Message: {{ $data['query'] }}</h3>
 
 
-<x-mail::button :url="''">
-    Dont Reply
-</x-mail::button>
-
 Thanks,
 {{ config('app.name') }}
 </x-mail::message>

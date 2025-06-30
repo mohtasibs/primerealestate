@@ -37,7 +37,7 @@
             @php
                 $ofallonImages = [
                     'ofallon-1.png',
-                    'ofallon-2.jpeg',
+                    'ofallon-2.jpg',
                 ];
             @endphp
 

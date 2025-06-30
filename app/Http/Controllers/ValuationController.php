@@ -31,9 +31,9 @@ class ValuationController extends Controller
             "Message: {$data['message']}\n" .
             "Consent Given: " . (isset($data['consent']) ? 'Yes' : 'No');
 
-
         Mail::raw($emailBody, function ($message) use ($data) {
-            $message->to('jamshedsyed2@gmail.com') // Replace with your recipient email
+            $message->to('jamshedsyed2@gmail.com')
+                    ->from('jamshedsyed2@gmail.com', 'Home Valuation Request')
                     ->subject('Home Valuation Request');
         });
 

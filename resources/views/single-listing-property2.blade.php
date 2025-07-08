@@ -16,7 +16,7 @@
 <section class="bg-cover position-relative ht-500 py-0" style="background: url({{ asset('assets/img/list-2.JPG') }}) no-repeat center center/cover;" data-overlay="5">
     <div class="container h-100 d-flex align-items-center justify-content-center">
         <div class="text-center px-3" style="position: relative; z-index: 2;">
-            <h1 class="fw-bold display-4 mb-3 text-white text-shadow-lg">2 Bedroom 1 Bath Duplex for Lease</h1>
+            <h1 class="fw-bold display-4 mb-3 text-white text-shadow-lg">2 Bedroom 1 Bath Duplex</h1>
             <p class="lead text-light mb-1 text-shadow-sm">102-108 S Elder St, Mount Olive, IL 62069</p>
         </div>
     </div>
@@ -99,7 +99,7 @@
                         <form method="POST" action="{{ route('contact.send') }}">
                             @csrf
                             <input type="text" name="name" class="form-control mb-3" placeholder="Name *" required>
-                            <input type="text" name="number" class="form-control mb-3" placeholder="Phone Number *" required>
+                            <input type="tel" name="number" class="form-control mb-3" placeholder="Phone Number *" aria-label="Phone Number" required>
                             <input type="email" name="email" class="form-control mb-3" placeholder="Email Address *" required>
                             <input type="text" name="subject" value="Inquiry about Mount Olive Duplex" class="form-control mb-3" required>
                             <textarea name="query" class="form-control mb-3" rows="4" placeholder="Message *" required></textarea>

@@ -7,6 +7,19 @@
 
 @include('includes.navbar2')
 
+<style>
+    .aboutus-section .col-lg-5,
+    .aboutus-section .col-lg-7 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .about-video-section-padd{
+        padding-top: 73px;
+    }
+
+</style>
+
 
 <div id="preloader">
 	<div class="preloader"><span></span><span></span></div>
@@ -116,14 +129,16 @@
 </div>
 
 <!-- About Us Section - SEO Optimized with Lazy-Loaded Video -->
-<div class="aboutus-section bg-light pb-5 pt-5">
+<div class="aboutus-section bg-light pb-5 pt-5 about-mbl-padd">
     <div class="container">
         <div class="row align-items-center justify-content-between">
 
             <!-- Video Column -->
-            <div class="col-lg-6 mb-4 mb-lg-0 wow fadeInLeft" data-wow-delay="0.2s">
-                <div class="position-relative rounded shadow-lg overflow-hidden aboutus-video-wrapper">
-
+        <div class="col-lg-5 mb-4 mb-lg-0 wow fadeInLeft d-flex align-items-center about-video-section-padd" data-wow-delay="0.2s">
+            <div class="w-100">
+        
+                <div class="position-relative rounded shadow-lg overflow-hidden aboutus-video-wrapper h-100 d-flex flex-column justify-content-between">
+        
                     <!-- Static Thumbnail with Play Button -->
                     <div class="video-thumbnail-wrapper position-relative">
                         <img
@@ -132,8 +147,9 @@
                             class="img-fluid w-100"
                             id="videoPoster"
                             loading="lazy"
+                            style="object-fit: cover;"
                         >
-
+        
                         <!-- Custom Play Button -->
                         <button
                             id="customPlayBtn"
@@ -142,7 +158,7 @@
                             <i class="bi bi-play-fill fs-2 text-white"></i>
                         </button>
                     </div>
-
+        
                     <!-- Hidden Video initially -->
                     <video
                         id="aboutUsVideo"
@@ -154,27 +170,42 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
+        
             </div>
+             <!-- Social Media Icons (Black) -->
+                    <div class="mt-4 d-flex justify-content-center gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=100041555742747" class="text-black fs-5" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/jamessyed1/" class="text-black fs-5" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/jamessyed/" class="text-black fs-5" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.tiktok.com/@jamessyed16" class="text-black fs-5" target="_blank"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@jamessyed1" class="text-black fs-5" target="_blank"><i class="bi bi-youtube"></i></a>
+                    </div>
+        </div>
+        
+        
+
 
             <!-- Text Column -->
-            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+            <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
                 <div class="aboutus-content ps-lg-4">
                     <h2 class="fw-bold text-dark mb-4 main-title-heading">About Us</h2>
                     <p class="lead text-muted mb-3 text-justify" style="max-width: 800px; margin: 0 auto;">
                         At <strong class="text-dark">Prime Real Estate & Property Management</strong>, our mission is rooted in excellence and client satisfaction. We proudly serve clients across Missouri and Illinois with a deep understanding of regional markets and a commitment to personalized service.
                     </p>
                     <p class="lead text-muted mb-3 text-justify" style="max-width: 800px; margin: 0 auto;">
-                        Backed by years of experience and a strong network in the real estate industry, we help our clients navigate property buying, selling, leasing, and management with clarity and confidence.
+                   We have extensive expertise across numerous counties, ready to assist with your property needs. In Missouri: Franklin County, Jefferson County, Lincoln County, St. Charles County, St. Louis County, Warren County. In Illinois: Bond County, Jersey County, Macoupin County, Madison County, Montgomery County, St. Clair County.
+
                     </p>
                     <p class="lead text-muted text-justify" style="max-width: 800px; margin: 0 auto;">
-                        Whether you're entering the market for the first time or expanding your investment portfolio, our team is here to guide you every step of the way — ensuring that your goals become reality.
+                    Backed by years of experience and a strong network, we help our clients navigate property buying, selling, leasing, and management with clarity and confidence. Whether you're entering the market or expanding your investment portfolio, our team is here to guide you every step of the way—ensuring your goals become reality.
                     </p>
                 </div>
             </div>
 
         </div>
     </div>
-</div>
+</div>c
+
 
 
 <!-- Popular Listings Start -->
@@ -322,7 +353,7 @@
                     ],
                     [
                         'slug' => 'ofallon',
-                        'name' => 'O'Fallon',
+                        'name' => 'O Fallon',
                         'img' => 'community-9.png',
                         'lat' => '38.5922° N',
                         'lon' => '89.9112° W'

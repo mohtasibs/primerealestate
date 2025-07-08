@@ -497,7 +497,7 @@ section>.container {
     height: 50px;
     border-radius: 100%;
     background: var(--bs-primary);
-    animation: preloader 1.3s linear infinite;
+    animation: preloader 1s linear infinite;
 }
 
 .preloader span:last-child {
@@ -8848,7 +8848,15 @@ Responsiveness Start
         max-height: 1000px;
         opacity: 1;
     }
+    
+    .about-mbl-padd{
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
 
+    .about-video-section-padd {
+        padding-top: 15px !important;
+    }
     .custom-nav-menu {
         flex-direction: column !important;
         gap: 1rem;

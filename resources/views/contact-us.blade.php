@@ -61,6 +61,9 @@
                         @if(session('success'))
                             <div class="alert alert-success" role="alert">{{ session('success') }}</div>
                         @endif
+                        @if(session('error'))
+                            <div class="alert alert-danger" role="alert">{{ session('error') }}</div>
+                        @endif
 
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -78,6 +81,15 @@
                             <div class="col-12">
                                 <textarea name="query" class="form-control bg-light" rows="5" placeholder="Enter Your Message *" aria-label="Message" required></textarea>
                             </div>
+
+                            <!-- 🛡 Honeypot Anti-Spam Field -->
+                            <div style="display: none;">
+                                <input type="text" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <!-- 🔐 reCAPTCHA v3 token -->
+                            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+
                             <div class="col-12">
                                 <button type="submit" class="btn no-hover w-100" role="button">
                                     Send Message <i class="fa-solid fa-paper-plane ms-2"></i>
@@ -92,6 +104,16 @@
         </div>
     </div>
 </section>
+
+{{-- reCAPTCHA v3 script --}}
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('NOCAPTCHA_SITEKEY') }}"></script>
+<script>
+    grecaptcha.ready(function () {
+        grecaptcha.execute('{{ env('NOCAPTCHA_SITEKEY') }}', { action: 'contact' }).then(function (token) {
+            document.getElementById('g-recaptcha-response').value = token;
+        });
+    });
+</script>
 
 @include('includes.Home.index.log')
 @include('includes.Home.index.cart')

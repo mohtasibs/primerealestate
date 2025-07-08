@@ -21,7 +21,7 @@
 <section class="bg-cover position-relative ht-500 py-0" style="background: url('{{ asset('assets/img/list-1.jpg') }}') no-repeat center center/cover;" data-overlay="5">
     <div class="container h-100 d-flex align-items-center justify-content-center">
         <div class="text-center px-3" role="banner">
-            <h1 class="fw-bold display-4 mb-3 text-white text-shadow-lg">For Lease, 2 Bedroom 1 Bath Duplex</h1>
+            <h1 class="fw-bold display-4 mb-3 text-white text-shadow-lg">2 Bedroom 1 Bath Duplex</h1>
             <p class="lead text-light mb-1 text-shadow-sm">202 W. Wabash Ave, Stonington, IL 62567</p>
         </div>
     </div>
@@ -118,19 +118,19 @@
 							@csrf
 							<div class="row g-3">
 								<div class="col-md-6">
-									<input type="text" name="name" class="form-control bg-light" placeholder="Name *" required>
+									<input type="text" name="name" class="form-control" placeholder="Name *" required>
 								</div>
 								<div class="col-md-6">
-									<input type="text" name="number" class="form-control bg-light" placeholder="Phone Number *" required>
+                                    <input type="tel" name="number" class="form-control" placeholder="Phone Number *" aria-label="Phone Number" required>
 								</div>
 								<div class="col-md-12">
-									<input type="email" name="email" class="form-control bg-light" placeholder="Email Address *" required>
+									<input type="email" name="email" class="form-control" placeholder="Email Address *" required>
 								</div>
 								<div class="col-12">
-									<input type="text" name="subject" class="form-control bg-light" value="Inquiry about: For Lease, 2 Bedroom 1 Bath Duplex" readonly>
+									<input type="text" name="subject" class="form-control" value="Inquiry about: For Lease, 2 Bedroom 1 Bath Duplex" readonly>
 								</div>
 								<div class="col-12">
-									<textarea name="query" class="form-control bg-light" rows="5" placeholder="Enter Your Message *" required></textarea>
+									<textarea name="query" class="form-control" rows="5" placeholder="Enter Your Message *" required></textarea>
 								</div>
 								<div class="col-12">
 									<button type="submit" class="btn btn-danger">

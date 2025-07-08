@@ -115,6 +115,15 @@
     });
 </script>
 
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        if (!document.getElementById('g-recaptcha-response').value) {
+            e.preventDefault();
+            alert('Please wait while reCAPTCHA verifies you...');
+        }
+    });
+</script>
+
 @include('includes.Home.index.log')
 @include('includes.Home.index.cart')
 @include('includes.Home.index.search')

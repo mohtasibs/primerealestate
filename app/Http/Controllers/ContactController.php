@@ -23,7 +23,7 @@ class ContactController extends Controller
                 return back()->with('error', 'Spam detected. Submission blocked.');
             }
 
-            // Validate form input + reCAPTCHA token
+            // Validate form input and reCAPTCHA token
             $request->validate([
                 'name' => 'required|string|max:255',
                 'email' => 'required|email',
@@ -33,30 +33,31 @@ class ContactController extends Controller
                 'g-recaptcha-response' => 'required'
             ]);
 
-            // Verify reCAPTCHA v3 with Google API
+            // Verify reCAPTCHA v2 checkbox
             $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
                 'secret' => env('NOCAPTCHA_SECRET'),
                 'response' => $request->input('g-recaptcha-response'),
+                'remoteip' => $request->ip(),
             ]);
 
             $result = $response->json();
 
-            // Log full reCAPTCHA API response for debugging
-            Log::info('reCAPTCHA result:', $result);
+            // Log response for debugging
+            Log::info('reCAPTCHA v2 response:', $result);
 
-            if (!isset($result['success']) || !$result['success'] || $result['score'] < 0.5) {
-                return back()->with('error', 'reCAPTCHA verification failed. Please try again.');
+            if (empty($result['success']) || !$result['success']) {
+                return back()->with('error', 'reCAPTCHA verification failed. Please check the box.');
             }
 
-            // Prepare email data
+            // Prepare data
             $data = $request->only(['name', 'email', 'number', 'subject', 'query']);
 
-            // Send contact message via Mailable
+            // Send email
             Mail::to('jamshedsyed2@gmail.com')->send(new Contactus($data));
 
             return back()->with('success', 'Your message has been sent successfully!');
         } catch (\Exception $e) {
-            Log::error('Contact form failed: ' . $e->getMessage());
+            Log::error('Contact form error: ' . $e->getMessage());
             return back()->with('error', 'Something went wrong. Please try again later.');
         }
     }

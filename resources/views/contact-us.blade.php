@@ -87,8 +87,13 @@
                                 <input type="text" name="website" tabindex="-1" autocomplete="off">
                             </div>
 
-                            <!-- reCAPTCHA Token -->
-                            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                            <!-- reCAPTCHA v2 Checkbox -->
+                            <div class="col-12">
+                                <div class="g-recaptcha" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}"></div>
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span class="text-danger d-block mt-2">{{ $errors->first('g-recaptcha-response') }}</span>
+                                @endif
+                            </div>
 
                             <div class="col-12">
                                 <button type="submit" class="btn no-hover w-100" role="button">
@@ -104,24 +109,8 @@
     </div>
 </section>
 
-<!-- reCAPTCHA script (V3) -->
-<script src="https://www.google.com/recaptcha/api.js?render={{ env('NOCAPTCHA_SITEKEY') }}"></script>
-<script>
-    const form = document.getElementById('contactForm');
-
-    form.addEventListener('submit', function (e) {
-        e.preventDefault(); // Pause form
-
-        grecaptcha.ready(function () {
-            grecaptcha.execute('{{ env('NOCAPTCHA_SITEKEY') }}', { action: 'contact' }).then(function (token) {
-                document.getElementById('g-recaptcha-response').value = token;
-
-                // Now safely submit the form
-                form.submit();
-            });
-        });
-    });
-</script>
+<!-- Load reCAPTCHA v2 -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 @include('includes.Home.index.log')
 @include('includes.Home.index.cart')

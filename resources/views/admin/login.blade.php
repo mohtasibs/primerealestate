@@ -10,64 +10,77 @@
 
     <style>
         body {
-            background: #f4f6f9;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e9f3ff, #fdfdff);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .login-card {
+            width: 100%;
             max-width: 400px;
-            margin: 60px auto;
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
             background: #fff;
+            overflow: hidden;
+            padding: 30px 25px;
         }
         .login-header {
             text-align: center;
-            padding: 30px 20px 10px;
+            margin-bottom: 20px;
         }
         .login-header h4 {
             font-weight: 600;
+            color: #333;
+        }
+        .form-control {
+            border-radius: 8px;
+            padding: 10px 12px;
         }
         .btn-login {
-            background: #0d6efd;
+            background: #dc3545;
             border: none;
             width: 100%;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 10px;
+            transition: 0.3s;
         }
         .btn-login:hover {
-            background: #084298;
+            background: #b02a37;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="login-card p-4">
-        <div class="login-header">
-            <h4>Admin Login</h4>
-            <p class="text-muted">Sign in to your dashboard</p>
+<div class="login-card">
+    <div class="login-header">
+        <h4>Admin Login</h4>
+    </div>
+
+    @if($errors->any())
+        <div class="alert alert-danger">
+            {{ $errors->first() }}
+        </div>
+    @endif
+
+    <form method="POST" action="{{ route('admin.login.submit') }}">
+        @csrf
+
+        <div class="mb-3">
+            <label class="form-label">Email Address</label>
+            <input type="email" name="email" class="form-control" placeholder="Enter email" required autofocus>
         </div>
 
-        @if($errors->any())
-            <div class="alert alert-danger">
-                {{ $errors->first() }}
-            </div>
-        @endif
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+        </div>
 
-        <form method="POST" action="{{ route('admin.login.submit') }}">
-            @csrf
-
-            <div class="mb-3">
-                <label class="form-label">Email Address</label>
-                <input type="email" name="email" class="form-control" placeholder="Enter email" required autofocus>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Enter password" required>
-            </div>
-
-            <button type="submit" class="btn btn-login text-white py-2">Login</button>
-        </form>
-    </div>
+        <button type="submit" class="btn btn-login text-white">Login</button>
+    </form>
 </div>
 
 <!-- Bootstrap JS -->

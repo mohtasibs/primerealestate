@@ -12,6 +12,9 @@ use App\Http\Controllers\listing5Controller;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ValuationController;
 use App\Http\Controllers\RentalApplicationController;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminPropertyController;
 
 
 Route::get('/', [HomeController::class, 'home3']);
@@ -160,4 +163,16 @@ Route::prefix('admin')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('admin.login.submit');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
+
+    // Admin Properties Routes
+    Route::get('/properties', [AdminPropertyController::class, 'index'])->name('admin.properties.index');
+    Route::get('/properties/create', [AdminPropertyController::class, 'create'])->name('admin.properties.create');
+    Route::post('/properties', [AdminPropertyController::class, 'store'])->name('admin.properties.store');
+    Route::get('/properties/{id}', [AdminPropertyController::class, 'show'])->name('admin.properties.show');
+    Route::get('/properties/{id}/edit', [AdminPropertyController::class, 'edit'])->name('admin.properties.edit');
+    Route::put('/properties/{id}', [AdminPropertyController::class, 'update'])->name('admin.properties.update');
+    Route::delete('/properties/{id}', [AdminPropertyController::class, 'destroy'])->name('admin.properties.destroy');
 });
+
+
+

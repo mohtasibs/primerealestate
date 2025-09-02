@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Admin Dashboard - Properties</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -43,6 +43,9 @@
         .card {
             border-radius: 12px;
         }
+        .table img {
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
@@ -50,60 +53,77 @@
 <!-- Sidebar -->
 <div class="sidebar">
     <h4 class="text-center mb-4">Admin Panel</h4>
-    <a href="#">🏠 Dashboard</a>
-    <a href="#">📂 Listings</a>
-    <a href="#">👤 Users</a>
-    <a href="#">📝 Blog</a>
-    <a href="#">📊 Reports</a>
-    <a href="{{ route('admin.logout') }}">🚪 Logout</a>
+    <a href="{{ route('admin.dashboard') }}">🏠 Dashboard</a>
+    <a href="{{ route('admin.properties.index') }}">📂 Properties</a>
+    <form action="{{ route('admin.logout') }}" method="POST" class="mt-4">
+        @csrf
+        <button type="submit" class="btn btn-link text-white w-100 text-start">🚪 Logout</button>
+    </form>
 </div>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
     <div class="container-fluid">
-        <span class="navbar-brand">Welcome, {{ Auth::guard('admin')->user()->name ?? 'Admin' }}</span>
+        <span class="navbar-brand">Welcome, {{ $admin->name ?? 'Admin' }}</span>
     </div>
 </nav>
 
 <!-- Main Content -->
 <div class="content">
-    <div class="row g-4">
-        <div class="col-md-3">
-            <div class="card text-white bg-primary p-3 shadow">
-                <h5>Total Listings</h5>
-                <h3>120</h3>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-white bg-success p-3 shadow">
-                <h5>Total Users</h5>
-                <h3>85</h3>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-white bg-warning p-3 shadow">
-                <h5>Messages</h5>
-                <h3>45</h3>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-white bg-danger p-3 shadow">
-                <h5>Pending Approvals</h5>
-                <h3>12</h3>
-            </div>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">Properties Management</h3>
+        <a href="{{ route('admin.properties.create') }}" class="btn btn-primary">➕ Add New Property</a>
     </div>
 
-    <div class="card mt-4 shadow">
-        <div class="card-header">
-            Recent Activity
-        </div>
+    <!-- Properties Table -->
+    <div class="card shadow">
         <div class="card-body">
-            <ul>
-                <li>User <b>John Doe</b> registered.</li>
-                <li>New listing <b>Luxury Apartment</b> added.</li>
-                <li>Blog post <b>Real Estate Tips</b> published.</li>
-            </ul>
+            <table class="table table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Location</th>
+                        <th>Price</th>
+                        <th>Bedrooms</th>
+                        <th>Bathrooms</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse($properties as $property)
+                        <tr>
+                            <td>{{ $property->id }}</td>
+                            <td>
+                                @if($property->main_image)
+                                    <img src="{{ asset('assets/img/' . $property->main_image) }}" alt="{{ $property->title }}" width="80">
+                                @else
+                                    <span class="text-muted">No Image</span>
+                                @endif
+                            </td>
+                            <td>{{ $property->title }}</td>
+                            <td>{{ $property->location }}</td>
+                            <td>${{ number_format($property->price, 2) }}</td>
+                            <td>{{ $property->bedrooms }}</td>
+                            <td>{{ $property->bathrooms }}</td>
+                            <td>
+                                <a href="{{ route('admin.properties.show', $property->id) }}" class="btn btn-sm btn-info">👁 View</a>
+                                <a href="{{ route('admin.properties.edit', $property->id) }}" class="btn btn-sm btn-warning">✏ Edit</a>
+                                <form action="{{ route('admin.properties.destroy', $property->id) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">🗑 Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="8" class="text-center text-muted">No properties found.</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

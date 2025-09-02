@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -23,7 +22,8 @@ class AuthController extends Controller
 
         $admin = Admin::where('email', $request->email)->first();
 
-        if ($admin && Hash::check($request->password, $admin->password)) {
+        // Plain text password check
+        if ($admin && $request->password === $admin->password) {
             // Store login session
             session(['admin_id' => $admin->id]);
 

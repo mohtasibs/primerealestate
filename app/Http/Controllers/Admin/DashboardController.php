@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 
 class DashboardController extends Controller
 {
@@ -12,6 +13,9 @@ class DashboardController extends Controller
             return redirect()->route('admin.login');
         }
 
-        return view('admin.dashboard');
+        // Get logged in admin
+        $admin = Admin::find(session('admin_id'));
+
+        return view('admin.dashboard', compact('admin'));
     }
 }

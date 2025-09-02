@@ -41,7 +41,7 @@
                             <a href="{{ url('/blog') }}" class="home-link nav-font">Our Blogs</a>
                         </li>
                         <li><a href="{{ url('/contact-us') }}">Contact Us</a></li>
-                        
+
                     </ul>
                 </div>
 

@@ -155,3 +155,9 @@ Route::view('/our-listings', 'search-properties.our-listings')->name('search.our
 Route::view('/mo-properties', 'search-properties.mo-properties')->name('search.moProperties');
 Route::view('/il-properties', 'search-properties.il-properties')->name('search.ilProperties');
 
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('admin.login');
+    Route::post('/login', [AuthController::class, 'login'])->name('admin.login.submit');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
+});

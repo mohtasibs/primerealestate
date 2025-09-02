@@ -448,8 +448,32 @@
     </div>
 </section>
 
+<!-- Latest Updates Start -->
+<div class="py-5">
+	<div class="container">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-xl-7 col-lg-8 col-md-11 col-sm-12">
+				<div class="secHeading-wrap text-center">
+					<h2 class="fw-bold mb-4 display-5 text-dark main-title-heading">Our Blogs</h2>
+					<p>Stay Updated with the Latest Blogs</p>
+				</div>
+			</div>
+		</div>
 
-<section class="py-5 bg-light hide-on-mobile-sm">
+		<!-- Blog Slider Start -->
+		<div class="row">
+			<div class="col-12">
+				{{-- This partial handles its own loop --}}
+				@include('includes.Home.index.blog')
+			</div>
+		</div>
+		<!-- Blog Slider End -->
+
+	</div>
+</div>
+<!-- Latest Updates End -->
+
+<section class="py-5 bg-light">
     <div class="container text-center">
         <h2 class="fw-bold text-dark mb-3 main-title-heading">What Our Clients Say</h2>
         <p class="text-muted mb-4">Real experiences from satisfied homeowners and investors</p>

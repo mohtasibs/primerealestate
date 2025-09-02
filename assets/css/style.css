@@ -286,6 +286,44 @@ section>.container {
     animation: slideDown 1s ease;
 }
 
+.blogTags ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.blogTags ul li {
+    margin: 0;
+}
+
+.blogTags ul li a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f8f9fa;
+    color: #444;
+    font-size: 14px;
+    border-radius: 25px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.blogTags ul li a:hover {
+    background-color: #dc3545; /* Bootstrap red */
+    color: #fff;
+    border-color: #dc3545;
+    transform: scale(1.05);
+}
+
+.blog-padd{
+    padding-top: 6rem;
+}
+
 @keyframes slideDown {
     from {
         transform: translateY(-100%);

@@ -37,7 +37,11 @@
                                 <li><a href="/our-agent" class="dropdown-item">James Syed</a></li>
                             </ul>
                         </li>
+                        <li class="parent-parent-menu-item">
+                            <a href="{{ url('/blog') }}" class="home-link nav-font">Our Blogs</a>
+                        </li>
                         <li><a href="{{ url('/contact-us') }}">Contact Us</a></li>
+                        
                     </ul>
                 </div>
 

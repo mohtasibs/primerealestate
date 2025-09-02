@@ -11,7 +11,7 @@
 		<meta name="author" content="Shreethemes">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
-		<title>ListingHub - Laravel 12 Business Directory & Listing Template</title>
+		<title>Prime Real Estate</title>
 		<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
 		<!-- All Plugins -->

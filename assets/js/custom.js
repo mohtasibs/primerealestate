@@ -516,47 +516,47 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-        if (window.innerWidth > 576) {
-            $(".itemslider").owlCarousel({
-                loop: true,
+    $(".itemslider").owlCarousel({
+        loop: true,
+        dots: true,
+        lazyLoad: true,
+        autoplay: true,
+        margin: 15,
+        responsiveClass: true,
+        navText: [
+            "<i class='fa-solid fa-caret-left'></i>",
+            "<i class='fa-solid fa-caret-right'></i>",
+        ],
+        responsive: {
+            0: {
+                items: 1,
                 dots: true,
-                lazyLoad: true,
-                autoplay: true,
-                margin: 15,
-                responsiveClass: true,
-                navText: [
-                    "<i class='fa-solid fa-caret-left'></i>",
-                    "<i class='fa-solid fa-caret-right'></i>",
-                ],
-                responsive: {
-                    0: {
-                        items: 1,
-                        dots: true,
-                        nav: false,
-                        loop: true,
-                    },
-                    768: {
-                        items: 2,
-                        dots: true,
-                        nav: false,
-                        loop: true,
-                    },
-                    1199: {
-                        items: 3,
-                        nav: false,
-                        dots: true,
-                        loop: true,
-                    },
-                    1920: {
-                        items: 4,
-                        nav: false,
-                        dots: true,
-                        loop: true,
-                    },
-                },
-            });
-        }
+                nav: false,
+                loop: true,
+            },
+            576: {
+                items: 1, // or 2 if you prefer
+                dots: true,
+                nav: false,
+            },
+            768: {
+                items: 2,
+                dots: true,
+                nav: false,
+            },
+            1199: {
+                items: 3,
+                dots: true,
+                nav: false,
+            },
+            1920: {
+                items: 4,
+                dots: true,
+                nav: false,
+            },
+        },
     });
+});
 
     // MagnificPopup
     $("body").magnificPopup({
@@ -632,18 +632,20 @@ function setActiveTab(button) {
 }
 
 $(document).ready(function () {
-    if (window.innerWidth > 576) {
-        $(".testimonial-carousel").owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: false,
-            dots: true,
-            autoplay: true,
-            autoplayTimeout: 8000,
-            smartSpeed: 2000,
-            items: 1,
-        });
-    }
+    $(".testimonial-carousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 8000,
+        smartSpeed: 2000,
+        responsive: {
+            0: { items: 1 },    // always 1 item on mobile
+            768: { items: 2 },  // show 2 on tablets
+            1200: { items: 3 }  // show 3 on desktop
+        }
+    });
 });
 
 window.addEventListener("scroll", function () {

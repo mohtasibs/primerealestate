@@ -22,7 +22,6 @@
     <script src="https://d2w6u17ngtanmy.cloudfront.net/scripts/my-buying-buddy.5.0.js.gz"></script>
 
 
-
     <!-- Core CSS with cache busting -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}?v={{ filemtime(base_path('assets/css/bootstrap.min.css')) }}" rel="stylesheet">
     <link href="{{ asset('assets/css/owl.carousel.min.css') }}?v={{ filemtime(base_path('assets/css/owl.carousel.min.css')) }}" rel="stylesheet">
@@ -36,6 +35,27 @@
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+     <!-- begin Widget Tracker Code -->
+    <script>
+        (function(w,i,d,g,e,t){
+            w["WidgetTrackerObject"]=g;
+            (w[g]=w[g]||function(){
+                (w[g].q=w[g].q||[]).push(arguments);
+            }),
+            (w[g].ds=1*new Date());
+            (e="script"),
+            (t=d.createElement(e)),
+            (e=d.getElementsByTagName(e)[0]);
+            t.async=1;
+            t.src=i;
+            e.parentNode.insertBefore(t,e);
+        })(window,"https://widgetbe.com/agent",document,"widgetTracker");
+
+        window.widgetTracker("create", "WT-OCGLSHJW");
+        window.widgetTracker("send", "pageview");
+    </script>
+    <!-- end Widget Tracker Code -->
 
     <!-- Google Tag Manager (GTM) Code for <head> section -->
     <script>

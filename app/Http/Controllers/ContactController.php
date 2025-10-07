@@ -30,6 +30,7 @@ class ContactController extends Controller
                 'number' => 'required',
                 'subject' => 'required|string',
                 'query' => 'required|string',
+                'consent' => 'accepted', // added TCPA consent validation
                 'g-recaptcha-response' => 'required'
             ]);
 

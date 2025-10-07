@@ -5,53 +5,60 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Property;
+use App\Models\Admin;
 
 class AdminPropertyController extends Controller
 {
+    // Get logged in admin from session
+    private function getAdmin()
+    {
+        return Admin::find(session('admin_id'));
+    }
+
     // Show all properties in dashboard
     public function index()
     {
-        $admin = auth()->user();
-        $properties = Property::with('images')->get(); // Load images for frontend/admin views
+        $admin = $this->getAdmin();
+        $properties = Property::with('images')->get();
         return view('admin.properties.index', compact('admin', 'properties'));
     }
 
     // Show form to create new property
     public function create()
     {
-        $admin = auth()->user();
+        $admin = $this->getAdmin();
         return view('admin.properties.create', compact('admin'));
     }
 
     // Store new property
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            'price' => 'required|numeric',
-            'rent' => 'nullable|numeric',
-            'deposit' => 'nullable|numeric',
-            'bedrooms' => 'required|integer',
-            'bathrooms' => 'required|integer',
-            'size' => 'nullable|string|max:50',
-            'year_built' => 'nullable|integer',
+        $validated = $request->validate([
+            'title'         => 'required|string|max:255',
+            'address'       => 'required|string|max:255',
+            'price'         => 'required|numeric',
+            'rent'          => 'nullable|numeric',
+            'deposit'       => 'nullable|numeric',
+            'bedrooms'      => 'required|integer',
+            'bathrooms'     => 'required|integer',
+            'size'          => 'nullable|string|max:50',
+            'year_built'    => 'nullable|integer',
             'property_type' => 'nullable|string|max:100',
-            'status' => 'nullable|string|max:100',
-            'description' => 'nullable|string',
-            'latitude' => 'nullable|numeric',
-            'longitude' => 'nullable|numeric',
+            'status'        => 'nullable|string|max:100',
+            'description'   => 'nullable|string',
+            'latitude'      => 'nullable|numeric',
+            'longitude'     => 'nullable|numeric',
         ]);
 
-        Property::create($request->all());
+        Property::create($validated);
 
         return redirect()->route('admin.properties.index')->with('success', 'Property added successfully!');
     }
 
-    // Show property details in admin
+    // Show property details
     public function show($id)
     {
-        $admin = auth()->user();
+        $admin = $this->getAdmin();
         $property = Property::with('images')->findOrFail($id);
         return view('admin.properties.show', compact('admin', 'property'));
     }
@@ -59,7 +66,7 @@ class AdminPropertyController extends Controller
     // Show edit form
     public function edit($id)
     {
-        $admin = auth()->user();
+        $admin = $this->getAdmin();
         $property = Property::with('images')->findOrFail($id);
         return view('admin.properties.edit', compact('admin', 'property'));
     }
@@ -69,24 +76,24 @@ class AdminPropertyController extends Controller
     {
         $property = Property::findOrFail($id);
 
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            'price' => 'required|numeric',
-            'rent' => 'nullable|numeric',
-            'deposit' => 'nullable|numeric',
-            'bedrooms' => 'required|integer',
-            'bathrooms' => 'required|integer',
-            'size' => 'nullable|string|max:50',
-            'year_built' => 'nullable|integer',
+        $validated = $request->validate([
+            'title'         => 'required|string|max:255',
+            'address'       => 'required|string|max:255',
+            'price'         => 'required|numeric',
+            'rent'          => 'nullable|numeric',
+            'deposit'       => 'nullable|numeric',
+            'bedrooms'      => 'required|integer',
+            'bathrooms'     => 'required|integer',
+            'size'          => 'nullable|string|max:50',
+            'year_built'    => 'nullable|integer',
             'property_type' => 'nullable|string|max:100',
-            'status' => 'nullable|string|max:100',
-            'description' => 'nullable|string',
-            'latitude' => 'nullable|numeric',
-            'longitude' => 'nullable|numeric',
+            'status'        => 'nullable|string|max:100',
+            'description'   => 'nullable|string',
+            'latitude'      => 'nullable|numeric',
+            'longitude'     => 'nullable|numeric',
         ]);
 
-        $property->update($request->all());
+        $property->update($validated);
 
         return redirect()->route('admin.properties.index')->with('success', 'Property updated successfully!');
     }

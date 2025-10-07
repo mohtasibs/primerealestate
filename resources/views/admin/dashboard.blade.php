@@ -84,7 +84,7 @@
                         <th>ID</th>
                         <th>Image</th>
                         <th>Title</th>
-                        <th>Location</th>
+                        <th>Address</th>
                         <th>Price</th>
                         <th>Bedrooms</th>
                         <th>Bathrooms</th>
@@ -97,13 +97,14 @@
                             <td>{{ $property->id }}</td>
                             <td>
                                 @if($property->main_image)
-                                    <img src="{{ asset('assets/img/' . $property->main_image) }}" alt="{{ $property->title }}" width="80">
+                                    <img src="{{ asset('assets/img/' . $property->main_image) }}" 
+                                         alt="{{ $property->title }}" width="80">
                                 @else
                                     <span class="text-muted">No Image</span>
                                 @endif
                             </td>
                             <td>{{ $property->title }}</td>
-                            <td>{{ $property->location }}</td>
+                            <td>{{ $property->address }}</td>
                             <td>${{ number_format($property->price, 2) }}</td>
                             <td>{{ $property->bedrooms }}</td>
                             <td>{{ $property->bathrooms }}</td>

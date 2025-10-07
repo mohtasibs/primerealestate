@@ -158,13 +158,17 @@ Route::view('/our-listings', 'search-properties.our-listings')->name('search.our
 Route::view('/mo-properties', 'search-properties.mo-properties')->name('search.moProperties');
 Route::view('/il-properties', 'search-properties.il-properties')->name('search.ilProperties');
 
+
 Route::prefix('admin')->group(function () {
+    // Authentication
     Route::get('/login', [AuthController::class, 'showLogin'])->name('admin.login');
     Route::post('/login', [AuthController::class, 'login'])->name('admin.login.submit');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
 
-    // Admin Properties Routes
+    // Protected routes (controllers themselves will check session)
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+
+    // Admin Properties
     Route::get('/properties', [AdminPropertyController::class, 'index'])->name('admin.properties.index');
     Route::get('/properties/create', [AdminPropertyController::class, 'create'])->name('admin.properties.create');
     Route::post('/properties', [AdminPropertyController::class, 'store'])->name('admin.properties.store');
@@ -173,6 +177,7 @@ Route::prefix('admin')->group(function () {
     Route::put('/properties/{id}', [AdminPropertyController::class, 'update'])->name('admin.properties.update');
     Route::delete('/properties/{id}', [AdminPropertyController::class, 'destroy'])->name('admin.properties.destroy');
 });
+
 
 
 

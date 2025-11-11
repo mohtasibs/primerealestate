@@ -87,26 +87,30 @@
                                 <input type="text" name="website" tabindex="-1" autocomplete="off">
                             </div>
 
+
+                           <!-- TCPA Opt-In Checkbox -->
+                            <div class="col-12">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" name="consent" id="consent" required>
+                                    <label class="form-check-label" for="consent">
+                                        I agree to be contacted by Prime Real Estate and Property Management
+                                        via call, email, and text for real estate services. To opt out, you can reply 'stop'
+                                        at any time or reply 'help' for assistance. You can also click the unsubscribe link
+                                        in the emails. Message and data rates may apply. Message frequency may vary. Please review our
+                                        <a href="{{ route('privacyPolicy') }}" target="_blank" rel="noopener noreferrer" class="text-primary text-decoration-underline">
+                                            Privacy Policy
+                                        </a>.
+                                    </label>
+                                </div>
+                            </div>
+
+
                             <!-- reCAPTCHA v2 Checkbox -->
                             <div class="col-12">
                                 <div class="g-recaptcha" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}"></div>
                                 @if ($errors->has('g-recaptcha-response'))
                                     <span class="text-danger d-block mt-2">{{ $errors->first('g-recaptcha-response') }}</span>
                                 @endif
-                            </div>
-
-                            <!-- TCPA Opt-In Checkbox -->
-                            <div class="col-12">
-                                <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" name="consent" id="consent" required>
-                                    <label class="form-check-label" for="consent">
-                                        I agree to be contacted by <strong>Prime Real Estate and Property Management</strong>
-                                        via call, email, and text for real estate services. To opt out, you can reply 'stop'
-                                        at any time or reply 'help' for assistance. You can also click the unsubscribe link
-                                        in the emails. Message and data rates may apply. Message frequency may vary.
-
-                                    </label>
-                                </div>
                             </div>
 
                             <div class="col-12">

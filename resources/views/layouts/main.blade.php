@@ -36,26 +36,38 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-     <!-- begin Widget Tracker Code -->
     <script>
-        (function(w,i,d,g,e,t){
-            w["WidgetTrackerObject"]=g;
-            (w[g]=w[g]||function(){
-                (w[g].q=w[g].q||[]).push(arguments);
-            }),
-            (w[g].ds=1*new Date());
-            (e="script"),
-            (t=d.createElement(e)),
-            (e=d.getElementsByTagName(e)[0]);
-            t.async=1;
-            t.src=i;
-            e.parentNode.insertBefore(t,e);
-        })(window,"https://widgetbe.com/agent",document,"widgetTracker");
+      function loadScript(callback) {
+        var head = document.getElementsByTagName("head")[0];
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://tracker.metricool.com/resources/be.js";
+        script.onreadystatechange = callback;
+        script.onload = callback;
+        head.appendChild(script);
+      }
 
-        window.widgetTracker("create", "WT-OCGLSHJW");
-        window.widgetTracker("send", "pageview");
+      loadScript(function() {
+        beTracker.t({ hash: "f4543e72beb7fdb7c1b328e933723785" });
+      });
     </script>
-    <!-- end Widget Tracker Code -->
+
+
+    <script>
+        function loadScript(callback) {
+        var head = document.getElementsByTagName("head")[0];
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://tracker.metricool.com/resources/be.js";
+        script.onreadystatechange = callback;
+        script.onload = callback;
+        head.appendChild(script);
+        }
+
+        loadScript(function() {
+        beTracker.t({ hash: "f4543e72beb7fdb7c1b328e933723785" });
+        });
+    </script>
 
     <!-- Google Tag Manager (GTM) Code for <head> section -->
     <script>
@@ -79,6 +91,8 @@
 
         gtag('config', 'G-C3P2LG0HPR'); // GA4 Measurement ID
     </script>
+
+
 </head>
 
 <body>

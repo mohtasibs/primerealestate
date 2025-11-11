@@ -8886,7 +8886,7 @@ Responsiveness Start
         max-height: 1000px;
         opacity: 1;
     }
-    
+
     .about-mbl-padd{
         padding-top: 0px !important;
         padding-bottom: 0px !important;
@@ -9239,20 +9239,23 @@ Responsiveness Start
 
 #back2Top {
     width: 40px;
+    height: 40px;
     line-height: 40px;
     overflow: hidden;
-    z-index: 999;
+    z-index: 9999; /* raise above other fixed elements */
     display: none;
     cursor: pointer;
     position: fixed;
-    bottom: 10px;
+    bottom: 80px; /* raised above new contact button */
     right: 20px;
     text-align: center;
     font-size: 15px;
     border-radius: 4px;
+    background-color: #dc3545; /* Bootstrap red */
+    color: #fff;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
-
 #success_page {
     background-color: rgba(83, 199, 151, 0.1) !important;
     border: 2px solid rgba(83, 199, 151, 0.1) !important;

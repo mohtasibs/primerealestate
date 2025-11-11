@@ -179,5 +179,5 @@ Route::prefix('admin')->group(function () {
 });
 
 
-
-
+// Privacy Policy page
+Route::view('/privacy-policy', 'privacy-policy')->name('privacyPolicy');

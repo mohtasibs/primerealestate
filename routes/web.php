@@ -18,91 +18,20 @@ use App\Http\Controllers\Admin\AdminPropertyController;
 
 
 Route::get('/', [HomeController::class, 'home3']);
-Route::get('/home-2', [HomeController::class, 'home2']);
 Route::get('/home-3', [HomeController::class, 'home3']);
-Route::get('/home-4', [HomeController::class, 'home4']);
-Route::get('/home-5', [HomeController::class, 'home5']);
-Route::get('/home-6', [HomeController::class, 'home6']);
-Route::get('/home-7', [HomeController::class, 'home7']);
-Route::get('/home-8', [HomeController::class, 'home8']);
-Route::get('/home-9', [HomeController::class, 'home9']);
-Route::get('/home-10', [HomeController::class, 'home10']);
-Route::get('/home-splash', [HomeController::class, 'homeSplash']);
-Route::get('/home-map', [HomeController::class, 'homeMap']);
-
-Route::get('/grid-layout-01', [HomeController::class, 'gridLayout01']);
-Route::get('/grid-layout-02', [HomeController::class, 'gridLayout02']);
-Route::get('/grid-layout-03', [HomeController::class, 'gridLayout03']);
-Route::get('/grid-layout-04', [HomeController::class, 'gridLayout04']);
-Route::get('/grid-layout-05', [HomeController::class, 'gridLayout05']);
-Route::get('/grid-layout-06', [HomeController::class, 'gridLayout06']);
-
-Route::get('/list-layout-01', [HomeController::class, 'listLayout01']);
-Route::get('/list-layout-02', [HomeController::class, 'listLayout02']);
-Route::get('/list-layout-03', [HomeController::class, 'listLayout03']);
-Route::get('/list-layout-04', [HomeController::class, 'listLayout04']);
-Route::get('/list-layout-05', [HomeController::class, 'listLayout05']);
-
-Route::get('/half-map-01', [HomeController::class, 'halfMap01']);
-Route::get('/half-map-02', [HomeController::class, 'halfMap02']);
-Route::get('/half-map-03', [HomeController::class, 'halfMap03']);
-Route::get('/half-map-04', [HomeController::class, 'halfMap04']);
-Route::get('/half-map-05', [HomeController::class, 'halfMap05']);
-
-Route::get('/single-listing-01', [HomeController::class, 'singleListing01']);
-Route::get('/single-listing-01/{title}', [listing1Controller::class, 'show'])->name('single-listing-01');
 
 Route::get('/single-listing-02', [HomeController::class, 'singleListing02']);
 Route::get('/single-listing-02/{title}', [listing2Controller::class, 'show'])->name('single-listing-02');
 
-Route::get('/single-listing-03', [HomeController::class, 'singleListing03']);
-Route::get('/single-listing-03/{title}', [listing3Controller::class, 'show'])->name('single-listing-03');
-
-Route::get('/single-listing-04', [HomeController::class, 'singleListing04']);
-Route::get('/single-listing-04/{title}', [listing4Controller::class, 'show'])->name('single-listing-04');
-
-Route::get('/single-listing-05', [HomeController::class, 'singleListing05']);
-Route::get('/single-listing-05/{title}', [listing5Controller::class, 'show'])->name('single-listing-05');
-
-Route::get('/dashboard-user', [HomeController::class, 'dashboardUser']);
-Route::get('/dashboard-my-profile', [HomeController::class, 'dashboardMyProfile']);
-Route::get('/dashboard-my-bookings', [HomeController::class, 'dashboardMyBookings']);
-Route::get('/dashboard-my-listings', [HomeController::class, 'dashboardMyListings']);
-Route::get('/dashboard-bookmarks', [HomeController::class, 'dashboardBookmarks']);
-Route::get('/dashboard-messages', [HomeController::class, 'dashboardMessages']);
-Route::get('/dashboard-reviews', [HomeController::class, 'dashboardReviews']);
-Route::get('/dashboard-wallet', [HomeController::class, 'dashboardWallet']);
-Route::get('/dashboard-add-listing', [HomeController::class, 'dashboardAddListing']);
-
 Route::get('/login', [HomeController::class, 'login']);
 Route::get('/register', [HomeController::class, 'register']);
 Route::get('/forgot-password', [HomeController::class, 'forgotPassword']);
-Route::get('/two-factor-auth', [HomeController::class, 'twoFactorAuth']);
 
-Route::get('/author-profile', [HomeController::class, 'authorProfile']);
-Route::get('/booking-page', [HomeController::class, 'bookingPage']);
-Route::get('/about-us', [HomeController::class, 'aboutUs']);
 Route::get('/blog', [HomeController::class, 'blog']);
-
 Route::get('/blog-detail', [HomeController::class, 'blogDetail']);
 Route::get('/blog-detail/{title}', [BlogController::class, 'show'])->name('blog-detail');
 
-Route::get('/contact-us', [HomeController::class, 'contactUs']);
-
-Route::get('/pricing', [HomeController::class, 'pricing']);
-Route::get('/help-center', [HomeController::class, 'helpCenter']);
-Route::get('/comingsoon', [HomeController::class, 'comingsoon']);
-Route::get('/faq', [HomeController::class, 'faq']);
 Route::get('/error', [HomeController::class, 'error']);
-Route::get('/elements', [HomeController::class, 'elements']);
-
-Route::get('/checkout-page', [HomeController::class, 'checkoutPage']);
-Route::get('/invoice-page', [HomeController::class, 'invoicePage']);
-Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy']);
-Route::get('/single-helps', [HomeController::class, 'singleHelps']);
-Route::get('/success-payment', [HomeController::class, 'successPayment']);
-Route::get('/viewcart', [HomeController::class, 'viewcart']);
-
 Route::get('/leased-property-1', function () {
     return view('single-listing-02');
 })->name('property.stonington');

@@ -136,9 +136,9 @@
             <!-- Video Column -->
         <div class="col-lg-5 mb-4 mb-lg-0 wow fadeInLeft d-flex align-items-center about-video-section-padd" data-wow-delay="0.2s">
             <div class="w-100">
-        
+
                 <div class="position-relative rounded shadow-lg overflow-hidden aboutus-video-wrapper h-100 d-flex flex-column justify-content-between">
-        
+
                     <!-- Static Thumbnail with Play Button -->
                     <div class="video-thumbnail-wrapper position-relative">
                         <img
@@ -149,7 +149,7 @@
                             loading="lazy"
                             style="object-fit: cover;"
                         >
-        
+
                         <!-- Custom Play Button -->
                         <button
                             id="customPlayBtn"
@@ -158,7 +158,7 @@
                             <i class="bi bi-play-fill fs-2 text-white"></i>
                         </button>
                     </div>
-        
+
                     <!-- Hidden Video initially -->
                     <video
                         id="aboutUsVideo"
@@ -170,7 +170,7 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
-        
+
             </div>
              <!-- Social Media Icons (Black) -->
                     <div class="mt-4 d-flex justify-content-center gap-4">
@@ -181,8 +181,8 @@
                         <a href="https://www.youtube.com/@jamessyed1" class="text-black fs-5" target="_blank"><i class="bi bi-youtube"></i></a>
                     </div>
         </div>
-        
-        
+
+
 
 
             <!-- Text Column -->

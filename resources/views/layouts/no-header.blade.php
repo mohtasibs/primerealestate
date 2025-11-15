@@ -14,25 +14,25 @@
 		<title>Prime Real Estate</title>
 		<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
-		<!-- All Plugins -->
-		<link href="{{ asset('assets/css/animation.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/dropzone.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/rome.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/owl.carousel.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/owl.theme.default.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/rangeSlider.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/magnific-popup.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/prism.css') }}" rel="stylesheet">
+		<!-- All Plugins (root-relative paths so they work regardless of APP_URL) -->
+		<link href="/assets/css/animation.css" rel="stylesheet">
+		<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/css/dropzone.min.css" rel="stylesheet">
+		<link href="/assets/css/rome.css" rel="stylesheet">
+		<link href="/assets/css/owl.carousel.min.css" rel="stylesheet">
+		<link href="/assets/css/owl.theme.default.min.css" rel="stylesheet">
+		<link href="/assets/css/rangeSlider.min.css" rel="stylesheet">
+		<link href="/assets/css/select2.min.css" rel="stylesheet">
+		<link href="/assets/css/magnific-popup.css" rel="stylesheet">
+		<link href="/assets/css/prism.css" rel="stylesheet">
 
 		<!-- Icons CSS -->
-		<link href="{{ asset('assets/css/fontawesome.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/bootstrap-icons.css') }}" rel="stylesheet">
+		<link href="/assets/css/fontawesome.css" rel="stylesheet">
+		<link href="/assets/css/bootstrap-icons.css" rel="stylesheet">
 
 
 		<!-- Custom CSS -->
-		<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+		<link href="/assets/css/style.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -47,19 +47,19 @@
         </div>
 		<!-- End Wrapper -->
 
-        <!-- All Jquery -->
-		<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-		<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-		<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-		<script src="{{ asset('assets/js/dropzone.min.js') }}"></script>
-		<script src="{{ asset('assets/js/counterup.min.js') }}"></script>
-		<script src="{{ asset('assets/js/rangeslider.js') }}"></script>
-		<script src="{{ asset('assets/js/select2.min.js') }}"></script>
-		<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-		<script src="{{ asset('assets/js/rome.js') }}"></script>
-		<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+		<!-- All Jquery (root-relative paths so they work regardless of APP_URL) -->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/popper.min.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/dropzone.min.js"></script>
+		<script src="/assets/js/counterup.min.js"></script>
+		<script src="/assets/js/rangeslider.js"></script>
+		<script src="/assets/js/select2.min.js"></script>
+		<script src="/assets/js/owl.carousel.min.js"></script>
+		<script src="/assets/js/rome.js"></script>
+		<script src="/assets/js/jquery.magnific-popup.min.js"></script>
 
-		<script src="{{ asset('assets/js/custom.js') }}"></script>
+		<script src="/assets/js/custom.js"></script>
 		<!-- This page plugins -->
 
 	</body>

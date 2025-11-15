@@ -8,7 +8,7 @@
     <meta name="description" content="Prime Real Estate Website">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Prime Real Estate</title>
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(base_path('assets/img/favicon.png')) }}">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
 
     <!-- Buying Buddy CSS & Setup -->
     <script src="https://www.mbb2.com/version3/css/theme/acid/ESXzarvb"></script>
@@ -22,14 +22,14 @@
     <script src="https://d2w6u17ngtanmy.cloudfront.net/scripts/my-buying-buddy.5.0.js.gz"></script>
 
 
-    <!-- Core CSS with cache busting -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}?v={{ filemtime(base_path('assets/css/bootstrap.min.css')) }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/owl.carousel.min.css') }}?v={{ filemtime(base_path('assets/css/owl.carousel.min.css')) }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/owl.theme.default.min.css') }}?v={{ filemtime(base_path('assets/css/owl.theme.default.min.css')) }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/select2.min.css') }}?v={{ filemtime(base_path('assets/css/select2.min.css')) }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/fontawesome.css') }}?v={{ filemtime(base_path('assets/css/fontawesome.css')) }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/bootstrap-icons.css') }}?v={{ filemtime(base_path('assets/css/bootstrap-icons.css')) }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/style.css') }}?v={{ filemtime(base_path('assets/css/style.css')) }}" rel="stylesheet">
+    <!-- Core CSS with cache busting (root-relative paths so they work regardless of APP_URL) -->
+    <link href="/assets/css/bootstrap.min.css?v={{ filemtime(public_path('assets/css/bootstrap.min.css')) }}" rel="stylesheet">
+    <link href="/assets/css/owl.carousel.min.css?v={{ filemtime(public_path('assets/css/owl.carousel.min.css')) }}" rel="stylesheet">
+    <link href="/assets/css/owl.theme.default.min.css?v={{ filemtime(public_path('assets/css/owl.theme.default.min.css')) }}" rel="stylesheet">
+    <link href="/assets/css/select2.min.css?v={{ filemtime(public_path('assets/css/select2.min.css')) }}" rel="stylesheet">
+    <link href="/assets/css/fontawesome.css?v={{ filemtime(public_path('assets/css/fontawesome.css')) }}" rel="stylesheet">
+    <link href="/assets/css/bootstrap-icons.css?v={{ filemtime(public_path('assets/css/bootstrap-icons.css')) }}" rel="stylesheet">
+    <link href="/assets/css/style.css?v={{ filemtime(public_path('assets/css/style.css')) }}" rel="stylesheet">
 
     <!-- External CSS -->
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
@@ -53,21 +53,6 @@
     </script>
 
 
-    <script>
-        function loadScript(callback) {
-        var head = document.getElementsByTagName("head")[0];
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "https://tracker.metricool.com/resources/be.js";
-        script.onreadystatechange = callback;
-        script.onload = callback;
-        head.appendChild(script);
-        }
-
-        loadScript(function() {
-        beTracker.t({ hash: "f4543e72beb7fdb7c1b328e933723785" });
-        });
-    </script>
 
     <!-- Google Tag Manager (GTM) Code for <head> section -->
     <script>
@@ -113,15 +98,15 @@
 
     <a href="#" class="btn-primary back-to-top" id="back2Top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- Core JS with cache busting -->
-    <script src="{{ asset('assets/js/jquery.min.js') }}?v={{ filemtime(base_path('assets/js/jquery.min.js')) }}"></script>
-    <script src="{{ asset('assets/js/popper.min.js') }}?v={{ filemtime(base_path('assets/js/popper.min.js')) }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}?v={{ filemtime(base_path('assets/js/bootstrap.min.js')) }}"></script>
-    <script src="{{ asset('assets/js/rangeslider.js') }}?v={{ filemtime(base_path('assets/js/rangeslider.js')) }}"></script>
-    <script src="{{ asset('assets/js/select2.min.js') }}?v={{ filemtime(base_path('assets/js/select2.min.js')) }}"></script>
-    <script src="{{ asset('assets/js/owl.carousel.min.js') }}?v={{ filemtime(base_path('assets/js/owl.carousel.min.js')) }}"></script>
-    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}?v={{ filemtime(base_path('assets/js/jquery.magnific-popup.min.js')) }}"></script>
-    <script src="{{ asset('assets/js/custom.js') }}?v={{ filemtime(base_path('assets/js/custom.js')) }}"></script>
+    <!-- Core JS with cache busting (root-relative paths so they work regardless of APP_URL) -->
+    <script src="/assets/js/jquery.min.js?v={{ filemtime(public_path('assets/js/jquery.min.js')) }}"></script>
+    <script src="/assets/js/popper.min.js?v={{ filemtime(public_path('assets/js/popper.min.js')) }}"></script>
+    <script src="/assets/js/bootstrap.min.js?v={{ filemtime(public_path('assets/js/bootstrap.min.js')) }}"></script>
+    <script src="/assets/js/rangeslider.js?v={{ filemtime(public_path('assets/js/rangeslider.js')) }}"></script>
+    <script src="/assets/js/select2.min.js?v={{ filemtime(public_path('assets/js/select2.min.js')) }}"></script>
+    <script src="/assets/js/owl.carousel.min.js?v={{ filemtime(public_path('assets/js/owl.carousel.min.js')) }}"></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js?v={{ filemtime(public_path('assets/js/jquery.magnific-popup.min.js')) }}"></script>
+    <script src="/assets/js/custom.js?v={{ filemtime(public_path('assets/js/custom.js')) }}"></script>
 
     <!-- External JS -->
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>

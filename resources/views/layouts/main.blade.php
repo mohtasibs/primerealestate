@@ -117,8 +117,6 @@
         </div>
     </div>
 
-    <!-- Buying Buddy Disclaimer (required for compliance) -->
-    <div id="MBBv3_Disclaimer"></div>
 
     <a href="#" class="btn-primary back-to-top" id="back2Top"><i class="bi bi-arrow-up"></i></a>
 

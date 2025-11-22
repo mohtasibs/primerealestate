@@ -12,7 +12,16 @@
     <link rel="icon" type="image/png"
         href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(base_path('assets/img/favicon.png')) }}">
 
-    <!-- CRITICAL CSS -->
+    <!-- Buying Buddy -->
+    <script src="https://www.mbb2.com/version3/css/theme/acid/ESXzarvb"></script>
+    <script>
+        var MBB = { seo: "false", data: { acid: "ESXzarvb" } };
+        function mbbMapLoaded() { MBB.googleMaps = true; };
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=mbbMapLoaded&libraries=places&key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
+    <script src="https://d2w6u17ngtanmy.cloudfront.net/scripts/my-buying-buddy.5.0.js.gz"></script>
+
+    <!-- CRITICAL CSS (kept render-blocking) -->
     <link rel="stylesheet"
         href="{{ asset('assets/css/bootstrap.min.css') }}?v={{ filemtime(base_path('assets/css/bootstrap.min.css')) }}">
     <link rel="stylesheet"
@@ -20,24 +29,26 @@
     <link rel="stylesheet"
         href="{{ asset('assets/css/style.css') }}?v={{ filemtime(base_path('assets/css/style.css')) }}">
 
-    <!-- NON-CRITICAL CSS (async) -->
+    <!-- NON-CRITICAL CSS (async loaded to remove render blocking) -->
     <link rel="preload" href="{{ asset('assets/css/owl.carousel.min.css') }}?v={{ filemtime(base_path('assets/css/owl.carousel.min.css')) }}" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="{{ asset('assets/css/owl.theme.default.min.css') }}?v={{ filemtime(base_path('assets/css/owl.theme.default.min.css')) }}" as="style" onload="this.rel='stylesheet'">
+
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style" onload="this.rel='stylesheet'">
 
     <!-- Metricool -->
     <script>
-        function loadScript(callback, src) {
+        function loadScript(callback) {
+            var head = document.getElementsByTagName("head")[0];
             var script = document.createElement("script");
-            script.src = src;
+            script.src = "https://tracker.metricool.com/resources/be.js";
             script.onload = callback;
-            document.head.appendChild(script);
+            head.appendChild(script);
         }
         loadScript(function () {
             beTracker.t({ hash: "f4543e72beb7fdb7c1b328e933723785" });
-        }, "https://tracker.metricool.com/resources/be.js");
+        });
     </script>
 
     <!-- Widget Tracker -->
@@ -106,36 +117,6 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script> new WOW().init(); </script>
-
-    <!-- Lazy-load Google Maps and Buying Buddy -->
-    <script>
-        function loadGoogleMaps() {
-            if (!document.getElementById('googleMapsScript')) {
-                let script = document.createElement('script');
-                script.id = 'googleMapsScript';
-                script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc&callback=mbbMapLoaded&libraries=places";
-                script.defer = true;
-                document.body.appendChild(script);
-            }
-        }
-
-        function loadBuyingBuddy() {
-            if (!document.getElementById('buyingBuddyScript')) {
-                let script = document.createElement('script');
-                script.id = 'buyingBuddyScript';
-                script.src = "https://d2w6u17ngtanmy.cloudfront.net/scripts/my-buying-buddy.5.0.js.gz";
-                script.defer = true;
-                document.body.appendChild(script);
-            }
-        }
-
-        // Lazy-load after scroll or when needed
-        window.addEventListener("scroll", function lazyLoad() {
-            loadGoogleMaps();
-            loadBuyingBuddy();
-            window.removeEventListener("scroll", lazyLoad);
-        });
-    </script>
 
     <!-- Counter -->
     <script>

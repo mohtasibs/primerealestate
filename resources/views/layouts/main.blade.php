@@ -21,7 +21,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?callback=mbbMapLoaded&libraries=places&key=AIzaSyCFeHHlboPct7Yj6LmMVDcao4R_qlQNTlc"></script>
     <script src="https://d2w6u17ngtanmy.cloudfront.net/scripts/my-buying-buddy.5.0.js.gz"></script>
 
-    <!-- CRITICAL CSS (kept render-blocking) -->
+    <!-- CRITICAL CSS (render-blocking for first paint) -->
     <link rel="stylesheet"
         href="{{ asset('assets/css/bootstrap.min.css') }}?v={{ filemtime(base_path('assets/css/bootstrap.min.css')) }}">
     <link rel="stylesheet"
@@ -29,7 +29,7 @@
     <link rel="stylesheet"
         href="{{ asset('assets/css/style.css') }}?v={{ filemtime(base_path('assets/css/style.css')) }}">
 
-    <!-- NON-CRITICAL CSS (async loaded to remove render blocking) -->
+    <!-- NON-CRITICAL CSS (async preload to remove render-blocking) -->
     <link rel="preload" href="{{ asset('assets/css/owl.carousel.min.css') }}?v={{ filemtime(base_path('assets/css/owl.carousel.min.css')) }}" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="{{ asset('assets/css/owl.theme.default.min.css') }}?v={{ filemtime(base_path('assets/css/owl.theme.default.min.css')) }}" as="style" onload="this.rel='stylesheet'">
 

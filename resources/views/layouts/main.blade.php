@@ -26,8 +26,6 @@
     <link href="{{ asset('assets/css/bootstrap.min.css') }}?v={{ filemtime(base_path('assets/css/bootstrap.min.css')) }}" rel="stylesheet">
     <link href="{{ asset('assets/css/owl.carousel.min.css') }}?v={{ filemtime(base_path('assets/css/owl.carousel.min.css')) }}" rel="stylesheet">
     <link href="{{ asset('assets/css/owl.theme.default.min.css') }}?v={{ filemtime(base_path('assets/css/owl.theme.default.min.css')) }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/select2.min.css') }}?v={{ filemtime(base_path('assets/css/select2.min.css')) }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/fontawesome.css') }}?v={{ filemtime(base_path('assets/css/fontawesome.css')) }}" rel="stylesheet">
     <link href="{{ asset('assets/css/bootstrap-icons.css') }}?v={{ filemtime(base_path('assets/css/bootstrap-icons.css')) }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}?v={{ filemtime(base_path('assets/css/style.css')) }}" rel="stylesheet">
 
@@ -53,21 +51,32 @@
     </script>
 
 
-    <script>
-        function loadScript(callback) {
-        var head = document.getElementsByTagName("head")[0];
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "https://tracker.metricool.com/resources/be.js";
-        script.onreadystatechange = callback;
-        script.onload = callback;
-        head.appendChild(script);
-        }
 
-        loadScript(function() {
-        beTracker.t({ hash: "f4543e72beb7fdb7c1b328e933723785" });
-        });
+    <!-- Begin Widget Tracker Code -->
+    <script>
+    (function (w, i, d, g, e, t) {
+        w["WidgetTrackerObject"] = g;
+        w[g] = w[g] || function () {
+            (w[g].q = w[g].q || []).push(arguments);
+        };
+        w[g].ds = 1 * new Date();
+
+        e = "script";
+        t = d.createElement(e);
+        const s = d.getElementsByTagName(e)[0];
+
+        t.async = 1;
+        t.src = i;
+
+        s.parentNode.insertBefore(t, s);
+
+    })(window, "https://widgetbe.com/agent", document, "widgetTracker");
+
+    window.widgetTracker("create", "WT-OCGLSHJW");
+    window.widgetTracker("send", "pageview");
     </script>
+    <!-- End Widget Tracker Code -->
+
 
     <!-- Google Tag Manager (GTM) Code for <head> section -->
     <script>
@@ -115,10 +124,7 @@
 
     <!-- Core JS with cache busting -->
     <script src="{{ asset('assets/js/jquery.min.js') }}?v={{ filemtime(base_path('assets/js/jquery.min.js')) }}"></script>
-    <script src="{{ asset('assets/js/popper.min.js') }}?v={{ filemtime(base_path('assets/js/popper.min.js')) }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}?v={{ filemtime(base_path('assets/js/bootstrap.min.js')) }}"></script>
-    <script src="{{ asset('assets/js/rangeslider.js') }}?v={{ filemtime(base_path('assets/js/rangeslider.js')) }}"></script>
-    <script src="{{ asset('assets/js/select2.min.js') }}?v={{ filemtime(base_path('assets/js/select2.min.js')) }}"></script>
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}?v={{ filemtime(base_path('assets/js/owl.carousel.min.js')) }}"></script>
     <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}?v={{ filemtime(base_path('assets/js/jquery.magnific-popup.min.js')) }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}?v={{ filemtime(base_path('assets/js/custom.js')) }}"></script>
